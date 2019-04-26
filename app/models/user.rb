@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_attached_file :personal_photo, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: "/images/missing.png"
   validates_attachment_content_type :personal_photo, content_type: /\Aimage/
+
+  has_many :projects, dependent: :destroy
   
   before_create :assign_role_to_user
 

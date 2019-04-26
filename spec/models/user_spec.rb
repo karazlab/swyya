@@ -10,4 +10,8 @@ RSpec.describe User, type: :model do
       expect(user.has_role?(ROLES[:user])).to eql(true)
     end
   end
+
+  describe '#Associations' do
+    it { is_expected.to have_many(:projects).dependent(:destroy) }
+  end
 end
