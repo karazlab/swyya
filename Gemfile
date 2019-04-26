@@ -43,6 +43,7 @@ gem 'country_select'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+gem 'paperclip', '~> 6.0.0'
 
 # Config
 gem 'friendly_id', '~> 5.2.4'
