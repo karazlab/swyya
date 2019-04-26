@@ -1,33 +1,133 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  will_paginate:
+    next_label: Next Page
+    previous_label: Previous Page
+  arabic: عربي
+  english: English
+
+  male: Male
+  female: Female
+
+  first: First
+  last: Last
+
+  # A #
+  active: Active
+  actions: Actions
+  ago: ago
+  add_project: Add project
+  added_by: Added by
+
+  # B #
+  birthdate: Birth Date
+  bio: Bio
+  brief: Brief
+
+  # C #
+  categories: Categories
+  contine_reading: Continue Reading ..
+  create: Create
+  community: Community
+  content: Content
+  comment: Comment
+  comments: Comments
+
+  # D #
+  details: Details
+  description: Description
+  describe_your_self: A little about you
+  dislike: Dislike
+  delete: Delete
+  delete_confirmation: Are you sure about this process?
+
+  # E #
+  email: Email
+  edit_profile: Edit Profile
+  edit: Edit
+
+  # F #
+  favorite: Favorite
+  forgot_your_password?: Forgot your password?
+  follow: Follow
+  'false': No
+  founders: Founders
+  founded_date: Founded Date
+
+  # G #
+  gender: Gender
+
+  # H #
+  hidden: Hidden
+  hide: Hide
+
+  # I #
+  ideas: Ideas
+  idea: Idea
+
+  # L #
+  login: Log In
+  logout: Log Out
+  like: Like
+  logo: Logo
+
+  # N #
+  name: Name
+  new_members: New Members
+  new_post: New Post
+  no_comments: No Comments
+  newest: Newest
+  not_authorized: You are not authorized to access requested page.
+
+  # M #
+  most_recent: Most Recent
+  minimum_password: characters minimum
+
+  # O #
+  order_by: Order By
+  order_project_by: Order project By
+  other_projects: Other projects
+
+  # P #
+  profile: Profile
+  password: Password
+  password_confirmation: Password Confirmation
+  please_select: Please Select
+  process_success: Process successfully done
+  popular_discussions: Popular Discussions
+  picture: Profile Picture
+  projects: Projects
+  project: Project
+  projects_active: Approved projects
+  projects_pending: Pending projects
+  project_name: project Name
+  pending: Pending
+
+  # R #
+  register: Register
+  remember_me: Remember Me
+  review: In Review
+  random: Random
+
+  # S #
+  settings: Settings
+  submitted_by: 'Submitted by: '
+  projects_hidden: Hidden projects
+  situation: Situation
+  something_went_wrong: Something went wrong
+  share_public: Share Public
+  status: Status
+
+  # T #
+  tags: Tags
+  tags_separated_by_commas: 'Separated by commas, ex: startups, code ..'
+  title: Title
+  'true': Yes
+
+  # U #
+  username: Username
+  update: Update
+  useful_links: Useful Links
+  user_information: User Information
+
+  # V #
+  visible: Visible

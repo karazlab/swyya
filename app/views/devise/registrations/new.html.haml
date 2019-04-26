@@ -1,21 +1,22 @@
-%h2 Sign up
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email,
-      required: true,
-      autofocus: true,
-      input_html: { autocomplete: 'email' }
-    = f.input :username,
-      required: true,
-      input_html: { autocomplete: 'username' }
-    = f.input :password,
-      required: true,
-      hint: ('#{@minimum_password_length} characters minimum' if @minimum_password_length),
-      input_html: { autocomplete: 'new-password' }
-    = f.input :password_confirmation,
-      required: true,
-      input_html: { autocomplete: 'new-password' }
-  .form-actions
-    = f.button :submit, 'Sign up'
-= render 'devise/shared/links'
+#devise-box
+  .card
+    .card-body
+      %h4= t(:register)
+      %hr
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+        .form-group
+          %label= t(:email)
+          = f.input :email, required: true, autofocus: true, input_html: { autocomplete: 'email' }, label: false, class: 'form-control'
+        .form-group
+          %label= t(:username)
+          = f.input :username, required: true, input_html: { autocomplete: 'username' }, label: false, class: 'form-control'
+        .form-group
+          %label= t(:password)
+          = f.input :password, required: true, hint: ("#{@minimum_password_length} #{t(:minimum_password)}" if @minimum_password_length), input_html: { autocomplete: 'new-password' }, label: false, class: 'form-control'
+        .form-group
+          %label= t(:password_confirmation)
+          = f.input :password_confirmation, required: true, input_html: { autocomplete: 'new-password' }, label: false, class: 'form-control'
+        .form-actions
+          = f.button :submit, t(:register), class: 'btn btn-primary'
+= render partial: 'devise/shared_links_div'
