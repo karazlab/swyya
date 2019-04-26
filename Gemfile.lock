@@ -50,6 +50,7 @@ GEM
       awesome_print
       pry-rails
       railties
+    bcrypt (3.1.12)
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -59,6 +60,7 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
+    cancancan (2.3.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     countries (3.0.0)
@@ -69,6 +71,12 @@ GEM
       countries (~> 3.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.4)
+    devise (4.6.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -122,6 +130,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
+    orm_adapter (0.5.0)
     pg (1.1.4)
     popper_js (1.14.5)
     pry (0.12.2)
@@ -161,6 +170,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
+    rolify (5.2.0)
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
@@ -215,6 +228,8 @@ GEM
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
     unicode_utils (1.4.0)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -232,7 +247,9 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
   byebug
+  cancancan
   country_select
+  devise
   font-awesome-sass (~> 5.8.1)
   haml
   haml-rails (~> 2.0)
@@ -242,6 +259,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.3)
+  rolify
   sass-rails (~> 5.0)
   simple_form
   spring
