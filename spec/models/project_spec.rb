@@ -14,4 +14,18 @@ RSpec.describe Project, type: :model do
   describe '#Associations' do
     it { is_expected.to belong_to(:user) }
   end
+
+  describe '#Scopes' do
+    it 'scopes #active projects' do
+      expect(Project.active).to eq(Project.where(status: STATUS[:active]))
+    end
+    
+    it 'when create project it will be scoped to active' do
+      expect(Project.active).to include(project)
+    end
+
+    it 'get #newest projects' do
+      expect(Project.ordered_by_date).to include(project)
+    end
+  end
 end
