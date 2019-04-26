@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+ - 2.6.0
+services:
+  - postgresql
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database swyya_test;' -U postgres
