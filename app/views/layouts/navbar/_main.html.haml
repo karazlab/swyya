@@ -1,0 +1,9 @@
+%nav.navbar.navbar-light.navbar-expand-lg.shadow-sm
+  .container-fluid
+    = link_to 'Swyya', root_path, class: 'navbar-brand logo'
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+
+    = render partial: 'layouts/navbar/left_nav'
+    #navbarSupportedContent.collapse.navbar-collapse
+      = render partial: 'layouts/navbar/right_nav'
