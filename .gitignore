@@ -7,7 +7,7 @@ db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*
 /tmp/*
-db/schema.rb
+/db/schema.rb
 
 .env
 .keep
@@ -18,11 +18,11 @@ config/database.yml
 db/schema.rb
 .DS_Store
 
+**.swp
 .rubocop.yml
 
 public/system/profiles/pictures
 
-**.swp
 dump.rdb
 swyya.sh
 /spring-501/*
