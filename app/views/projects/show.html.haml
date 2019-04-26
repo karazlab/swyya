@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @project.title
+%p
+  %b Description:
+  = @project.description
+%p
+  %b Image url:
+  = @project.image_url
+%p
+  %b Github link:
+  = @project.github_link
+%p
+  %b User:
+  = @project.user
+
+= link_to 'Edit', edit_project_path(@project)
+\|
+= link_to 'Back', projects_path
