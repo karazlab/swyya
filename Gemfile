@@ -21,12 +21,19 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'awesome_rails_console'
 end
 
 # Design
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.8.1'
+gem 'haml'
+gem 'haml-rails', '~> 2.0'
+gem 'simple_form'
 
+# User Configuration
+gem 'country_select'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
