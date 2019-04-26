@@ -60,6 +60,7 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
+    cancancan (2.3.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     countries (3.0.0)
@@ -245,6 +246,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
   byebug
+  cancancan
   country_select
   devise
   font-awesome-sass (~> 5.8.1)
