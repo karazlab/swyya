@@ -1,7 +1,6 @@
-%h1 Editing project
-
-= render 'form'
-
-= link_to 'Show', @project
-\|
-= link_to 'Back', projects_path
+#project-box
+  .card
+    .card-body
+      %h4= t(:edit_project)
+      %hr
+      = render 'form'

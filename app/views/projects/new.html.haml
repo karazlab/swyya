@@ -1,5 +1,6 @@
-%h1 New project
-
-= render 'form'
-
-= link_to 'Back', projects_path
+#project-box
+  .card
+    .card-body
+      %h4= t(:new_project)
+      %hr
+      = render 'form'

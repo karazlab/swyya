@@ -1,0 +1,35 @@
+.btn-primary
+  background-color: $BLUE
+  color: $WHITE
+  border-color: $DARKBLUE
+  &:hover
+    background-color: $DARKBLUE
+    border-color: $DARKBLUE
+
+.toast
+  min-width: 350px !important
+
+.card
+  color: $BLACK
+  background-color: $GRAY
+  @extend .shadow-sm, .border, .mb-3
+  .title
+    font-family: 'Gugi', cursive !important
+    color: $BLUE
+  img
+    width: 65% !important
+    @extend .pt-3, .m-auto
+  #custom-body
+    @extend .pt-0, .mt-0
+
+#project-box
+  .card
+    color: $BLACK
+    background-color: $GRAY
+    @extend .shadow-sm, .border, .col-6, .offset-3
+    .links
+      a
+        color: $BLACK
+        &:hover
+          color: $APPLE
+          text-decoration: none

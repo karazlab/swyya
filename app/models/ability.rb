@@ -6,7 +6,7 @@ class Ability
   def initialize(user)
     user ||= User.new
     @user = user
-    @user.has_role?(ROLE[:superadmin]) ? superadmin_management : @user.has_role?(ROLE[:user]) ? user_management : visitor_management
+    @user.has_role?(ROLES[:superadmin]) ? superadmin_management : @user.has_role?(ROLES[:user]) ? user_management : visitor_management
   end
 
   def user_management
