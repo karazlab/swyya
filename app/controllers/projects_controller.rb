@@ -20,6 +20,14 @@ class ProjectsController < ApplicationController
     redirect_to projects_url
   end
 
+  def like
+    @project.like(current_user)
+  end
+
+  def dislike
+    @project.dislike(current_user)
+  end
+
   private
 
   def project_params

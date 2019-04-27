@@ -1,7 +1,17 @@
 #project-box
   .card
     .card-body
-      %h4= @project.title
+      .row
+        .col-10
+          %h4= @project.title
+        .col-2
+          .text-right
+            - if current_user.voted_for?(@project) && @project.get_upvotes.where(voter: current_user).present?
+              = link_to dislike_project_path(@project.id), method: :post, class: 'text-muted' do
+                = icon('fas', 'heart')
+            - else
+              = link_to like_project_path(@project.id), method: :post, class: 'text-muted' do
+                = icon('far', 'heart')
       %hr
         %p.text-center
           = image_tag(@project.image_url)
@@ -9,6 +19,8 @@
       
       %hr
         .links
+          %span.small.mr-1
+            = icon('fas', 'heartbeat', @project.get_likes.size)
           = link_to @project.github_link, class: 'small mr-1' do
             = icon('fab', 'github', t(:github_repo))
           = link_to '#', class: 'small mr-1' do

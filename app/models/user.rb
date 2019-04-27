@@ -14,6 +14,8 @@ class User < ApplicationRecord
   
   before_create :assign_role_to_user
 
+  acts_as_voter
+
   private
 
   def assign_role_to_user
