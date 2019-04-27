@@ -1,11 +1,11 @@
 - if flash.present?
   - flash.each do |key, message|
-    %div{'aria-atomic' => 'true', 'aria-live' => 'polite', style: 'position: relative; min-height: 200px;'}
-      .toast{style: 'position: absolute; top: 0; right: 0;'}
-        .toast-header
+    %div{'aria-atomic' => 'true', 'aria-live' => 'polite'}
+      .toast
+        .toast-header{class: "bg-#{key}"}
           %strong.mr-auto
             = icon('fas', 'exclamation-circle', key.to_s.titleize)
-          %small.text-muted
+          %small
             = time_ago(Time.now)
           %button.ml-2.mb-1.close{'aria-label': 'Close', 'data-dismiss': 'toast', type: 'button'}
             %span{'aria-hidden': 'true'} ×

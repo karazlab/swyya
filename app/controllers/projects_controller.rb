@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    flash[:notice] = t(:process_success)
+    flash[:warning] = t(:process_success)
     redirect_to projects_url
   end
 
@@ -29,11 +29,12 @@ class ProjectsController < ApplicationController
   end
 
   def success_response
-    flash[:notice] = t(:process_success)
+    flash[:success] = t(:process_success)
     redirect_to @project
   end
 
   def failure_response
-    render :new
+    flash[:danger] = t(:something_went_wrong)
+    render params[:action].eql?('create') ? :new : :edit
   end
 end
