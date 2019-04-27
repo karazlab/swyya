@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @projects = Project.ordered_by_date
+    @newest_projects = @projects.ordered_by_date.limit(8)
   end
 
   def create
