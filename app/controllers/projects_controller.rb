@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    flash[:notice] = t(:process_sucess)
+    flash[:notice] = t(:process_success)
     redirect_to projects_url
   end
 

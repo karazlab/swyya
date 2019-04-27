@@ -1,21 +1,28 @@
-%p#notice= notice
+#project-box
+  .card
+    .card-body
+      %h4= @project.title
+      %hr
+        %p.text-center
+          = image_tag(@project.image_url)
+        %p= simple_format(@project.description)
+      
+      %hr
+        .links
+          = link_to @project.github_link, class: 'small mr-1' do
+            = icon('fab', 'github', t(:github_repo))
+          = link_to '#', class: 'small mr-1' do
+            = icon('fas', 'user', user_information(@project))
+          %span.small
+            = icon('fas', 'clock', time_ago(@project.created_at))
 
-%p
-  %b Title:
-  = @project.title
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Image url:
-  = @project.image_url
-%p
-  %b Github link:
-  = @project.github_link
-%p
-  %b User:
-  = @project.user
-
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+- if can?(:manage, @project, current_user)
+  #project-box
+    .card
+      .card-body
+        = link_to edit_project_path(@project), class: 'btn btn-info btn-sm mr-1' do
+          = icon('fas', 'edit', t(:edit))
+        = link_to project_path(@project), method: :delete, class: 'btn btn-sm btn-danger mr-1', confirm: t(:delete_confirmation) do
+          = icon('fas', 'trash', t(:delete))
+        = link_to '#', class: 'btn btn-sm btn-dark mr-1' do
+          = icon('fas', 'eye-slash', t(:hide))

@@ -9,9 +9,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render partial: 'layouts/navbar/main'
-    .m-3
-      = render partial: 'layouts/alerts'
-      .container
-        .row
-          .col-12
-            = yield
+    = render partial: 'layouts/alerts'
+    .container.py-3
+      .row
+        .col-12
+          = yield
