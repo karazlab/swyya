@@ -8,6 +8,9 @@
         = icon('fas', 'user-plus', t(:register))
   - if user_signed_in?
     %li.nav-item
+      = link_to new_project_path, class: 'navbar-link' do
+        = icon('fas', 'plus', t(:new_project))
+    %li.nav-item
       = link_to '#', class: 'navbar-link' do
         = icon('fas', 'user-circle', current_user.try(:username) || current_user.email )
     %li.nav-item.dropdown

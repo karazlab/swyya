@@ -43,6 +43,7 @@ en:
   # E #
   email: Email
   edit_profile: Edit Profile
+  edit_project: Edit Project
   edit: Edit
 
   # F #
@@ -55,6 +56,7 @@ en:
 
   # G #
   gender: Gender
+  github_repo: Github Repository
 
   # H #
   hidden: Hidden
@@ -63,6 +65,7 @@ en:
   # I #
   ideas: Ideas
   idea: Idea
+  image_url: Image Link
 
   # L #
   login: Log In
@@ -72,6 +75,7 @@ en:
 
   # N #
   name: Name
+  new_project: New Project
   new_members: New Members
   new_post: New Post
   no_comments: No Comments
@@ -116,6 +120,7 @@ en:
   something_went_wrong: Something went wrong
   share_public: Share Public
   status: Status
+  submit: Submit
 
   # T #
   tags: Tags
