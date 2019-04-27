@@ -1,5 +1,6 @@
 RSpec.describe Project, type: :model do
-  let(:project) { create(:project, user: create(:user) ) }
+  let(:user)    { create(:user) }
+  let(:project) { create(:project, user: user ) }
 
   describe '#Validations' do
     it { is_expected.to validate_presence_of(:title) }
@@ -26,6 +27,16 @@ RSpec.describe Project, type: :model do
 
     it 'get #newest projects' do
       expect(Project.ordered_by_date).to include(project)
+    end
+  end
+
+  describe '#Delegates' do
+    it 'delegate username to user' do
+      expect(project.user_username).to eql(user.username)
+    end
+
+    it 'delegate email to user' do
+      expect(project.user_email).to eql(user.email)
     end
   end
 end
