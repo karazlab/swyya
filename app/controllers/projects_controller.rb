@@ -21,11 +21,15 @@ class ProjectsController < ApplicationController
   end
 
   def like
-    @project.like(current_user)
+    if @project.like(current_user)
+      render json: { data: 'success' }
+    end
   end
 
   def dislike
-    @project.dislike(current_user)
+    if @project.dislike(current_user)
+      render json: { data: 'success' }
+    end
   end
 
   private
