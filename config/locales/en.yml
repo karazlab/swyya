@@ -25,6 +25,7 @@ en:
   ago: ago
   add_project: Add project
   added_by: Added by
+  adding_date: Adding Date
 
   # B #
   birthdate: Birth Date
@@ -79,6 +80,7 @@ en:
   login: Log In
   logout: Log Out
   like: Like
+  likes: Likes
   logo: Logo
 
   # N #

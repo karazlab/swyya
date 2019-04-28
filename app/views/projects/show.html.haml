@@ -7,11 +7,12 @@
         .col-10
           %h4= @project.title
         .col-2
-          .text-right
-            = link_to like_project_path(@project.id), method: :post, remote: true, onclick: 'likeProject()', class: 'text-muted', id: 'like_btn' do
-              = icon('far', 'heart', title: t(:like))
-            = link_to dislike_project_path(@project.id), method: :post, onclick: 'dislikeProject()', class: 'text-muted', id: 'dislike_btn', remote: true do
-              = icon('fas', 'heart', title: t(:dislike))
+          - if user_signed_in?
+            .text-right
+              = link_to like_project_path(@project.id), method: :post, remote: true, onclick: 'likeProject()', class: 'text-muted', id: 'like_btn' do
+                = icon('far', 'heart', title: t(:like))
+              = link_to dislike_project_path(@project.id), method: :post, onclick: 'dislikeProject()', class: 'text-muted', id: 'dislike_btn', remote: true do
+                = icon('fas', 'heart', title: t(:dislike))
       %hr
         %p.text-center
           = image_tag(@project.image_url)
@@ -22,18 +23,18 @@
           .row.text-center
             .col
               = link_to @project.github_link, class: 'small mr-1' do
-                = icon('fab', 'github', t(:github_repo))
+                = icon('fab', 'github', t(:github_repo), title: t(:github_repo))
             .col
               %span.small
-                = icon('fas', 'heartbeat')
+                = icon('fas', 'heartbeat', title: t(:likes))
               %span.small#likes_counter
                 = @project.get_likes.size
             .col  
               = link_to '#', class: 'small mr-1' do
-                = icon('fas', 'user', user_information(@project))
+                = icon('fas', 'user', user_information(@project), title: t(:added_by))
             .col  
               %span.small
-                = icon('fas', 'clock', time_ago(@project.created_at))
+                = icon('fas', 'clock', time_ago(@project.created_at), title: t(:adding_date))
 
 - if can?(:manage, @project, current_user)
   #project-box
