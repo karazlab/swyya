@@ -9,9 +9,9 @@
         .col-2
           .text-right
             = link_to like_project_path(@project.id), method: :post, remote: true, onclick: 'likeProject()', class: 'text-muted', id: 'like_btn' do
-              = icon('fas', 'heart', title: t(:like))
+              = icon('far', 'heart', title: t(:like))
             = link_to dislike_project_path(@project.id), method: :post, onclick: 'dislikeProject()', class: 'text-muted', id: 'dislike_btn', remote: true do
-              = icon('far', 'heart', title: t(:dislike))
+              = icon('fas', 'heart', title: t(:dislike))
       %hr
         %p.text-center
           = image_tag(@project.image_url)
