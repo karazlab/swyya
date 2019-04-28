@@ -1,4 +1,12 @@
 en:
+
+  # RATINGS
+  weak: Weak
+  very_weak: Very Weak
+  good: Good
+  strong: Strong
+  very_strong: Very Strong
+
   will_paginate:
     next_label: Next Page
     previous_label: Previous Page
