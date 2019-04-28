@@ -122,6 +122,7 @@ en:
   remember_me: Remember Me
   review: In Review
   random: Random
+  repository: Repository
 
   # S #
   settings: Settings
@@ -132,6 +133,7 @@ en:
   share_public: Share Public
   status: Status
   submit: Submit
+  send: Send
 
   # T #
   tags: Tags
