@@ -10,7 +10,7 @@ class Ability
   end
 
   def user_management
-    can %i[index read], Project
+    can %i[index read like dislike], Project
     can :manage, Project, user_id: user.id
   end
 

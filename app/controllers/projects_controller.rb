@@ -20,6 +20,18 @@ class ProjectsController < ApplicationController
     redirect_to projects_url
   end
 
+  def like
+    if @project.like(current_user)
+      render json: { message: t(:process_success), error: t(:something_went_wrong) }
+    end
+  end
+
+  def dislike
+    if @project.dislike(current_user)
+      render json: { message: t(:process_success), error: t(:something_went_wrong) }
+    end
+  end
+
   private
 
   def project_params

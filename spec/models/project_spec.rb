@@ -39,4 +39,17 @@ RSpec.describe Project, type: :model do
       expect(project.user_email).to eql(user.email)
     end
   end
+
+  describe '#Act-As-Likeable' do
+    it '#Like' do
+      project.like(user)
+      expect(project.get_likes.size).to eql(1)
+    end
+
+    it '#DisLike' do
+      project.like(user)
+      project.dislike(user)
+      expect(project.get_likes.size).to eql(0)
+    end
+  end
 end

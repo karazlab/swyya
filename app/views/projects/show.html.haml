@@ -1,7 +1,17 @@
+= javascript_include_tag :projects
+
 #project-box
   .card
     .card-body
-      %h4= @project.title
+      .row
+        .col-10
+          %h4= @project.title
+        .col-2
+          .text-right
+            = link_to like_project_path(@project.id), method: :post, remote: true, onclick: 'likeProject()', class: 'text-muted', id: 'like_btn' do
+              = icon('far', 'heart', title: t(:like))
+            = link_to dislike_project_path(@project.id), method: :post, onclick: 'dislikeProject()', class: 'text-muted', id: 'dislike_btn', remote: true do
+              = icon('fas', 'heart', title: t(:dislike))
       %hr
         %p.text-center
           = image_tag(@project.image_url)
@@ -9,12 +19,21 @@
       
       %hr
         .links
-          = link_to @project.github_link, class: 'small mr-1' do
-            = icon('fab', 'github', t(:github_repo))
-          = link_to '#', class: 'small mr-1' do
-            = icon('fas', 'user', user_information(@project))
-          %span.small
-            = icon('fas', 'clock', time_ago(@project.created_at))
+          .row.text-center
+            .col
+              = link_to @project.github_link, class: 'small mr-1' do
+                = icon('fab', 'github', t(:github_repo))
+            .col
+              %span.small
+                = icon('fas', 'heartbeat')
+              %span.small#likes_counter
+                = @project.get_likes.size
+            .col  
+              = link_to '#', class: 'small mr-1' do
+                = icon('fas', 'user', user_information(@project))
+            .col  
+              %span.small
+                = icon('fas', 'clock', time_ago(@project.created_at))
 
 - if can?(:manage, @project, current_user)
   #project-box
@@ -26,3 +45,8 @@
           = icon('fas', 'trash', t(:delete))
         = link_to '#', class: 'btn btn-sm btn-dark mr-1' do
           = icon('fas', 'eye-slash', t(:hide))
+
+:javascript
+  var project_liked = #{project_liked?};
+  var project_id    = #{@project.id};
+  var project_likes = #{@project.get_likes.size};
