@@ -1,7 +1,7 @@
 module ApplicationHelper
   def check_alert(key)
     case key
-    when 'notice' then 'info'
+    when 'notice' then 'primary'
     when 'alert' then 'danger'
     else
       key
