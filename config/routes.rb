@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :projects do
     member do
       post 'like'
@@ -8,5 +9,8 @@ Rails.application.routes.draw do
       post 'active'
     end
   end
+
   root 'visitors#index'
+
+  get '/board', to: 'boards#index', as: 'user_board'
 end

@@ -11,14 +11,12 @@
       = link_to new_project_path, class: 'navbar-link' do
         = icon('fas', 'plus', t(:new_project))
     %li.nav-item
-      = link_to '#', class: 'navbar-link' do
-        = icon('fas', 'user-circle', current_user.try(:username) || current_user.email )
+      = link_to user_board_path, class: 'navbar-link' do
+        = icon('fas', 'clipboard-list', t(:board))
     %li.nav-item.dropdown
       = link_to '#', class: 'navbar-link dropdown-toggle', id: 'navbarDropdown', 'aria-expanded': false, 'aria-haspopup': true, 'data-toggle': 'dropdown' do
         = icon('fas', 'cog', t(:settings))
       .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdown"}
-        = link_to '#', class: 'dropdown-item navbar-dropdown' do
-          = icon('fas', 'folder-plus', 'Own Projects')
         = link_to '#', class: 'dropdown-item navbar-dropdown' do
           = icon('fas', 'user-edit', t(:edit_profile))
         .dropdown-divider
