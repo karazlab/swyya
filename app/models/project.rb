@@ -16,4 +16,12 @@ class Project < ApplicationRecord
   def dislike(actable_user)
     disliked_by(actable_user)
   end
+
+  def active
+    update_attributes(status: STATUS[:active])
+  end
+
+  def hide
+    update_attributes(status: STATUS[:inactive])
+  end
 end

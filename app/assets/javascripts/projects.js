@@ -8,28 +8,68 @@ $(function(){
   }
 });
 
+$(function(){
+  if(project_active){
+    $('#hide').show();
+    $('#active').hide();
+  } else {
+    $('#hide').hide();
+    $('#active').show();
+  }
+});
+
 function likeProject(){
-  var url = '/projets/' + project_id + '/like';
+  var url = '/projects/' + project_id + '/like';
   $.ajax({
     url: url,
     dataType: 'JSON',
-    method: 'POST'
+    method: 'POST',
+    success: function(data){
+      $('#dislike_btn').show();
+      $('#like_btn').hide();
+      $('#likes_counter').text(data.data.counts);
+    }
   });
-  $('#dislike_btn').show();
-  $('#like_btn').hide();
-  var counter = parseInt($('#likes_counter').text()) + 1;
-  $('#likes_counter').text(counter);
 }
 
 function dislikeProject(){
-  var url = '/projets/' + project_id + '/dislike';
+  var url = '/projects/' + project_id + '/dislike';
   $.ajax({
     url: url,
     dataType: 'JSON',
-    method: 'POST'
+    method: 'POST',
+    success: function(data){
+      $('#dislike_btn').hide();
+      $('#like_btn').show();
+      $('#likes_counter').text(data.data.counts);
+    }
   });
-  $('#like_btn').show();
-  $('#dislike_btn').hide();
-  var counter = parseInt($('#likes_counter').text()) - 1;
-  $('#likes_counter').text(counter);
+}
+
+function activateProject(){
+  var url = '/projects/' + project_id + '/active';
+  $.ajax({
+    url: url,
+    dataType: 'JSON',
+    method: 'POST',
+    success: function(data){
+      $('#hide').show();
+      $('#active').hide();
+      project_active = data.data.active;
+    }
+  });
+}
+
+function hideProject(){
+  var url = '/projects/' + project_id + '/hide';
+  $.ajax({
+    url: url,
+    dataType: 'JSON',
+    method: 'POST',
+    success: function(data){
+      $('#hide').hide();
+      $('#active').show();
+      project_active = data.data.active;
+    }
+  });
 }

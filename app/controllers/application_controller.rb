@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery unless: -> { request.format.json? }
+
   before_action :configure_devise_parameters, if: :devise_controller?
   before_action :set_paper_trail_whodunnit, on: %i[create update destroy], unless: :devise_controller?
 

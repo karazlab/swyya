@@ -7,7 +7,8 @@
       - @newest_projects.each do |project|
         .col-3
           .card
-            = image_tag(project.image_url, class: 'card-img-top')
+            - if project.image_url.present?
+              = image_tag(project.image_url, class: 'card-img-top')
             .card-body#custom-body
               %h5
                 = link_to project.title, project, class: 'title'

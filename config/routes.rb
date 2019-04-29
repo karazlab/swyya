@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     member do
       post 'like'
       post 'dislike'
+      post 'hide'
+      post 'active'
     end
   end
   root 'visitors#index'

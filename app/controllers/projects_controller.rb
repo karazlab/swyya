@@ -21,15 +21,19 @@ class ProjectsController < ApplicationController
   end
 
   def like
-    if @project.like(current_user)
-      render json: { message: t(:process_success), error: t(:something_went_wrong) }
-    end
+    render_success_json_response if @project.like(current_user)
   end
 
   def dislike
-    if @project.dislike(current_user)
-      render json: { message: t(:process_success), error: t(:something_went_wrong) }
-    end
+    render_success_json_response if @project.dislike(current_user)
+  end
+
+  def hide
+    render_success_json_response if @project.hide
+  end
+
+  def active
+    render_success_json_response if @project.active
   end
 
   private
@@ -48,5 +52,10 @@ class ProjectsController < ApplicationController
   def failure_response
     flash[:danger] = t(:something_went_wrong)
     render params[:action].eql?('create') ? :new : :edit
+  end
+
+  def render_success_json_response
+    render json: {  message: t(:process_success),
+                    data:    { counts: @project.get_likes.count, active: @project.status.eql?(STATUS[:active]) } }
   end
 end
