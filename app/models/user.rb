@@ -14,11 +14,17 @@ class User < ApplicationRecord
   
   before_create :assign_role_to_user
 
+  after_create :send_welcome_email
+
   acts_as_voter
 
   private
 
   def assign_role_to_user
     add_role(ROLES[:user]) if roles.blank?
+  end
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver
   end
 end
