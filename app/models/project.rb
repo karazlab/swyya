@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
   include ModelScopes
 
+  extend FriendlyId
+  friendly_id :title, use: %i[slugged finders]
+
   belongs_to :user
 
   validates_presence_of :title, :user, :github_link
