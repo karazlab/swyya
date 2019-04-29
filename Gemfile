@@ -28,6 +28,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_rails_console'
   gem 'guard-rspec', require: false
+  gem 'letter_opener'
 end
 
 # Design
@@ -49,6 +50,8 @@ gem 'paperclip', '~> 6.0.0'
 gem 'friendly_id', '~> 5.2.4'
 gem 'paper_trail'
 gem 'acts_as_votable', '~> 0.12.0'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'mailgun-ruby', '~>1.1.6'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

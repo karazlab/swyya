@@ -2,7 +2,7 @@
   - flash.each do |key, message|
     %div{'aria-atomic' => 'true', 'aria-live' => 'polite'}
       .toast
-        .toast-header{class: "bg-#{key}"}
+        .toast-header{class: "bg-#{check_alert(key)}"}
           %strong.mr-auto
             = icon('fas', 'exclamation-circle', key.to_s.titleize)
           %small
