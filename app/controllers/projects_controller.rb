@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = params[:project][:github_link].present? ? GithubFetcher.new(link: params[:project][:github_link]).fetch : Project.new(project_params)
     @project.save ? success_response : failure_response
   end
 
