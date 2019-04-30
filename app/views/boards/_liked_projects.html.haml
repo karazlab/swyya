@@ -1,0 +1,13 @@
+#heading-with-line
+  %h5
+    = t(:liked_projects)
+.card
+  .card-body#custom-body
+    %table.table.table-sm.table-borderless.mb-0.pb-0
+      %tbody
+        - @liked_projects.each do |project|
+          %tr
+            %td
+              = link_to project.title, project_path(project), class: 'title'
+              .small= icon('fas', 'clock', time_ago(project.created_at))
+              %hr

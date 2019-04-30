@@ -52,4 +52,17 @@ RSpec.describe Project, type: :model do
       expect(project.get_likes.size).to eql(0)
     end
   end
+
+  describe '#Ability to change status' do
+    it '#Hide Project' do
+      project.hide
+      expect(project.status).to eql(STATUS[:inactive])
+    end
+
+    it '#Activate Project' do
+      project2 = create(:project, user: user, status: STATUS[:inactive]) 
+      project2.active
+      expect(project2.status).to eql(STATUS[:active])
+    end
+  end
 end

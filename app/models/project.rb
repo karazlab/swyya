@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
   include ModelScopes
 
+  extend FriendlyId
+  friendly_id :title, use: %i[slugged finders]
+
   belongs_to :user
 
   validates_presence_of :title, :user, :github_link
@@ -15,5 +18,13 @@ class Project < ApplicationRecord
 
   def dislike(actable_user)
     disliked_by(actable_user)
+  end
+
+  def active
+    update_attributes(status: STATUS[:active])
+  end
+
+  def hide
+    update_attributes(status: STATUS[:inactive])
   end
 end

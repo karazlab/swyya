@@ -14,15 +14,16 @@
               = link_to dislike_project_path(@project.id), method: :post, onclick: 'dislikeProject()', class: 'text-muted', id: 'dislike_btn', remote: true do
                 = icon('fas', 'heart', title: t(:dislike))
       %hr
-        %p.text-center
-          = image_tag(@project.image_url)
+        - if @project.image_url.present?
+          %p.text-center
+            = image_tag(@project.image_url)
         %p= simple_format(@project.description)
       
       %hr
         .links
           .row.text-center
             .col
-              = link_to @project.github_link, class: 'small mr-1' do
+              = link_to @project.github_link, class: 'small mr-1 icon-link' do
                 = icon('fab', 'github', t(:repository), title: t(:repository))
             .col
               %span.small
@@ -30,7 +31,7 @@
               %span.small#likes_counter
                 = @project.get_likes.size
             .col  
-              = link_to '#', class: 'small mr-1' do
+              = link_to '#', class: 'small mr-1 icon-link' do
                 = icon('fas', 'user', user_information(@project), title: t(:added_by))
             .col  
               %span.small
@@ -40,14 +41,22 @@
   #project-box
     .card
       .card-body
-        = link_to edit_project_path(@project), class: 'btn btn-info btn-sm mr-1' do
-          = icon('fas', 'edit', t(:edit))
-        = link_to project_path(@project), method: :delete, class: 'btn btn-sm btn-danger mr-1', confirm: t(:delete_confirmation) do
-          = icon('fas', 'trash', t(:delete))
-        = link_to '#', class: 'btn btn-sm btn-dark mr-1' do
-          = icon('fas', 'eye-slash', t(:hide))
+        .row
+          .col
+            = link_to edit_project_path(@project), class: 'btn btn-info btn-sm btn-custom-width' do
+              = icon('fas', 'edit', t(:edit))
+          .col
+            = link_to project_path(@project), method: :delete, class: 'btn btn-sm btn-danger btn-custom-width', confirm: t(:delete_confirmation) do
+              = icon('fas', 'trash', t(:delete))
+          .col#hide
+            = link_to hide_project_path(@project.id), onclick: 'hideProject()', method: :post, remote: true, class: 'btn btn-sm btn-dark btn-custom-width' do
+              = icon('fas', 'eye-slash', t(:hide))
+          .col#active
+            = link_to active_project_path(@project.id), onclick: 'activateProject()', method: :post, remote: true, class: 'btn btn-sm btn-primary btn-custom-width' do
+              = icon('fas', 'eye', t(:active))
 
 :javascript
   var project_liked = #{project_liked?};
   var project_id    = #{@project.id};
   var project_likes = #{@project.get_likes.size};
+  var project_active = #{@project.status.eql?(STATUS[:active])}

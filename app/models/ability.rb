@@ -12,6 +12,8 @@ class Ability
   def user_management
     can %i[index read like dislike], Project
     can :manage, Project, user_id: user.id
+
+    can :index, BoardsController
   end
 
   def superadmin_management

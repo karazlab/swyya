@@ -11,10 +11,13 @@
   color: $WHITE !important
   border-color: $APPLE !important
 
-.bg-primary
+.bg-primary, .thead-primary
   background-color: $BLUE !important
   color: $WHITE !important
   border-color: $DARKBLUE !important
+
+.btn-custom-width
+  width: 100% !important
 
 .toast
   min-width: 350px !important
@@ -33,8 +36,16 @@
   .title
     font-family: 'Gugi', cursive !important
     color: $BLUE
+    &:hover
+      text-decoration: none
+      color: $BLACK !important
   img
     width: 65% !important
     @extend .pt-3, .m-auto
+  .icon-link
+    color: $BLACK
+    &:hover
+      color: $APPLE !important
+      text-decoration: none
   #custom-body
-    @extend .pt-0, .mt-0
+    @extend .pt-0, .mt-3
