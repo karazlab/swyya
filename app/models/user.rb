@@ -14,7 +14,7 @@ class User < ApplicationRecord
   
   before_create :assign_role_to_user
 
-  after_create :send_welcome_email
+  after_create :send_welcome_email, unless: Proc.new { Rails.env.eql?('test') }
 
   acts_as_voter
 
