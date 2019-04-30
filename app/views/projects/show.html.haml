@@ -23,7 +23,7 @@
         .links
           .row.text-center
             .col
-              = link_to @project.github_link, class: 'small mr-1' do
+              = link_to @project.github_link, class: 'small mr-1 icon-link' do
                 = icon('fab', 'github', t(:repository), title: t(:repository))
             .col
               %span.small
@@ -31,7 +31,7 @@
               %span.small#likes_counter
                 = @project.get_likes.size
             .col  
-              = link_to '#', class: 'small mr-1' do
+              = link_to '#', class: 'small mr-1 icon-link' do
                 = icon('fas', 'user', user_information(@project), title: t(:added_by))
             .col  
               %span.small
