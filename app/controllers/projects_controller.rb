@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = params[:project][:github_link].present? ? fetch_from_github : Project.new(project_params)
     @project.save ? success_response : failure_response
   end
 
@@ -57,5 +57,11 @@ class ProjectsController < ApplicationController
   def render_success_json_response
     render json: {  message: t(:process_success),
                     data:    { counts: @project.get_likes.count, active: @project.status.eql?(STATUS[:active]) } }
+  end
+
+  def fetch_from_github
+    GithubFetcher.new(link:    params[:project][:github_link],
+                      user_id: current_user.id)
+                  .fetch
   end
 end

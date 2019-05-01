@@ -63,6 +63,7 @@ en:
   'false': No
   founders: Founders
   founded_date: Founded Date
+  fetch_project_details_from_github: Fetch project details from Github
 
   # G #
   gender: Gender

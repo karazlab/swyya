@@ -23,7 +23,7 @@
         .links
           .row.text-center
             .col
-              = link_to @project.github_link, class: 'small mr-1 icon-link' do
+              = link_to @project.github_link, class: 'small mr-1 icon-link', target: '_blank' do
                 = icon('fab', 'github', t(:repository), title: t(:repository))
             .col
               %span.small
