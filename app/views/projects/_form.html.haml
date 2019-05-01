@@ -2,16 +2,16 @@
 = simple_form_for(@project) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
-
-  .form-group
-    %label= t(:title)
-    = f.input :title, required: true, autofocus: true, class: 'form-control', label: false
-  .form-froup
-    %label= t(:description)
-    = f.input :description, class: 'form-control', label: false
-  .form-gtoup
-    %label= t(:image_url)
-    = f.input :image_url, class: 'form-control', label: false
+  #swyya-source-project
+    .form-group
+      %label= t(:title)
+      = f.input :title, required: true, autofocus: true, class: 'form-control', label: false
+    .form-group
+      %label= t(:description)
+      = f.input :description, class: 'form-control', label: false
+    .form-group
+      %label= t(:image_url)
+      = f.input :image_url, class: 'form-control', label: false
   .form-group
     %label= t(:github_repo)
     = f.input :github_link, required: true, class: 'form-control', label: false

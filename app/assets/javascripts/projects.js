@@ -73,3 +73,17 @@ function hideProject(){
     }
   });
 }
+
+$(function(){
+  $('#source-from-github').change(function() {
+    if($(this).is(":checked")) {
+      $('#swyya-source-project').hide();
+      $('#resourceable').removeClass('badge-primary');
+      $('#resourceable').addClass('badge-success');
+    } else {
+      $('#resourceable').addClass('badge-primary');
+      $('#resourceable').removeClass('badge-success');
+      $('#swyya-source-project').show();
+    }  
+  });
+});

@@ -1,3 +1,12 @@
+= javascript_include_tag :projects
+
+.row.mb-3
+  #github-resource
+    %span.badge.p-3.badge-primary#resourceable
+      .form-group.form-check.mb-0.pb-0
+        %input#source-from-github.form-check-input.mt-0{type: 'checkbox'}
+        %label.form-check-label{for: 'source_from_github'}= t(:fetch_project_details_from_github)
+
 #project-box
   .card
     .card-body

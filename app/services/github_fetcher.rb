@@ -25,7 +25,7 @@ class GithubFetcher
     { 
       title:       record['name'],
       description: record['description'],
-      image_url:   record['avatar_url'],
+      image_url:   record['owner']['avatar_url'],
       github_link: record['html_url'],
       user_id:     user_id
     }
