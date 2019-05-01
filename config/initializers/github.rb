@@ -1,1 +1,1 @@
-GITHUB_LINK = 'https://api.github.com'
+GITHUB_LINK = 'https://api.github.com/repos'
