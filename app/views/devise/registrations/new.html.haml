@@ -1,3 +1,6 @@
+%script{src: 'https://cdn.jsdelivr.net/npm/zxcvbn@4.4.2/dist/zxcvbn.js'}
+%script{src: 'https://cdn.jsdelivr.net/gh/routekick/bootstrap-zxcvbn@1.1.0/bootstrap-zxcvbn.jquery.js'}
+
 #devise-box
   .card
     .card-body
@@ -23,9 +26,6 @@
         .form-actions
           = f.button :submit, t(:register), class: 'btn btn-primary'
 = render partial: 'devise/shared_links_div'
-
-%script{src: 'https://cdn.jsdelivr.net/npm/zxcvbn@4.4.2/dist/zxcvbn.js'}
-%script{src: 'https://cdn.jsdelivr.net/gh/routekick/bootstrap-zxcvbn@1.1.0/bootstrap-zxcvbn.jquery.js'}
 
 :javascript
   $('#passwordProgress').zxcvbnProgress({
