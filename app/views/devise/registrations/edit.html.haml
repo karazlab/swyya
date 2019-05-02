@@ -1,28 +1,49 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-    = f.input :username, required: true
-    = f.input :personal_photo, as: :file
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+%script{src: 'https://cdn.jsdelivr.net/npm/zxcvbn@4.4.2/dist/zxcvbn.js'}
+%script{src: 'https://cdn.jsdelivr.net/gh/routekick/bootstrap-zxcvbn@1.1.0/bootstrap-zxcvbn.jquery.js'}
+
+#devise-box
+  .card
+    .card-body
+      %h4= t(:edit_profile)
+      %hr
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = f.error_notification
+        .form-group
+          %label= t(:email)
+          = f.input :email, required: true, autofocus: true, label: false, class: 'form-control'
+        .form-group
+          %label= t(:username)
+          = f.input :username, required: true, label: false, class: 'form-control'
+        .form-group
+          %label= t(:picture)
+          = f.input :personal_photo, label: false, as: :file
+        .form-group
+          %label= t(:password)
+          = f.input :password, hint: t(:leave_it), required: false, label: false, class: 'form-control'
+          .progress
+            #passwordProgress.progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
+        .form-group
+          %label= t(:password_confirmation)
+          = f.input :password_confirmation, required: false, label: false, class: 'form-control'
+        .form-group
+          %hr
+        .form-group
+          %label= t(:current_password)
+          = f.input :current_password, hint: t(:current_password_required), required: true, label: false, class: 'form-control'
+        .form-actions
+          = f.button :submit, t(:update), class: 'btn btn-primary'
+
+#devise-box.cancel-account
+  .card
+    .card-body
+      %h4= t(:account_cancellation)
+      %hr
       %p
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    = f.input :password,
-      hint: "leave it blank if you don't want to change it",
-      required: false,
-      input_html: { autocomplete: 'new-password' }
-    = f.input :password_confirmation,
-      required: false,
-      input_html: { autocomplete: 'new-password' }
-    = f.input :current_password,
-      hint: 'we need your current password to confirm your changes',
-      required: true,
-      input_html: { autocomplete: 'current-password' }
-  .form-actions
-    = f.button :submit, 'Update'
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete}
-= link_to 'Back', :back
+        #{t(:unhappy?)} #{link_to t(:cancel_account), registration_path(resource_name), data: { confirm: t(:delete_confirmation) }, method: :delete}
+
+:javascript
+  $('#passwordProgress').zxcvbnProgress({
+    passwordInput: '#user_password',
+    ratings: ["#{t(:very_weak)}", "#{t(:weak)}", "#{t(:good)}", "#{t(:strong)}", "#{t(:very_strong)}"],
+    progressClasses: ['bg-danger', 'bg-warning', 'bg-warning', 'bg-success', 'bg-success']
+  });
