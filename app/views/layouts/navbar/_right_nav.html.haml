@@ -17,7 +17,7 @@
       = link_to '#', class: 'navbar-link dropdown-toggle', id: 'navbarDropdown', 'aria-expanded': false, 'aria-haspopup': true, 'data-toggle': 'dropdown' do
         = icon('fas', 'cog', t(:settings))
       .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdown"}
-        = link_to '#', class: 'dropdown-item navbar-dropdown' do
+        = link_to edit_user_registration_path, class: 'dropdown-item navbar-dropdown' do
           = icon('fas', 'user-edit', t(:edit_profile))
         .dropdown-divider
         = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item navbar-dropdown' do

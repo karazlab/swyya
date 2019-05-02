@@ -26,6 +26,7 @@ en:
   add_project: Add project
   added_by: Added by
   adding_date: Adding Date
+  account_cancellation: Account Cancellation
 
   # B #
   birthdate: Birth Date
@@ -35,6 +36,7 @@ en:
 
   # C #
   categories: Categories
+  cancel_account: Cancel my account
   contine_reading: Continue Reading ..
   create: Create
   community: Community
@@ -43,6 +45,7 @@ en:
   comments: Comments
   change_your_password: Change Your Password
   change_password: Change Password
+  current_password_required: We need your current password to confirm your changes
 
   # D #
   details: Details
@@ -88,6 +91,7 @@ en:
   likes: Likes
   logo: Logo
   liked_projects: Liked Projects
+  leave_it: Leave it blank if you don't want to change it
 
   # N #
   name: Name
@@ -154,6 +158,7 @@ en:
   update: Update
   useful_links: Useful Links
   user_information: User Information
+  unhappy?: Unhappy?
 
   # V #
   visible: Visible
