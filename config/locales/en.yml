@@ -41,6 +41,8 @@ en:
   content: Content
   comment: Comment
   comments: Comments
+  change_your_password: Change Your Password
+  change_password: Change Password
 
   # D #
   details: Details
@@ -96,6 +98,7 @@ en:
   no_comments: No Comments
   newest: Newest
   not_authorized: You are not authorized to access requested page.
+  new_password: New Password
 
   # M #
   most_recent: Most Recent
