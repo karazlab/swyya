@@ -1,10 +1,14 @@
 - projects.each do |project|
-  .col-3
+  .col-4
     .card
-      - if project.image_url.present?
-        = image_tag(project.image_url, class: 'card-img-top')
       .card-body#custom-body
-        %h5
-          = link_to project.title, project, class: 'title'
-        %p.card-text= project.description
-        -# = link_to t(:repository), project.github_link, class: 'btn btn-secondary btn-sm', target: '_blank'
+        .row
+          .col-3
+            - if project.image_url.present?
+              = image_tag(project.image_url, class: 'card-img-top')
+          .col-9
+            %h5
+              = link_to project.title, project, class: 'title'
+            %p.card-text
+              = truncate(project.description, length: 50)
+            -# = link_to t(:repository), project.github_link, class: 'btn btn-secondary btn-sm', target: '_blank'
