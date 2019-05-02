@@ -3,6 +3,6 @@ class BoardsController < ApplicationController
 
   def index
     @owned_projects = current_user.projects
-    @liked_projects = current_user.votes.map(&:votable).select { |project| project.status.eql?(STATUS[:active]) }
+    @liked_projects = current_user.get_up_voted(Project).select { |project| project.status.eql?(STATUS[:active]) }
   end
 end
