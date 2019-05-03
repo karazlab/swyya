@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :personal_photo, content_type: /\Aimage/
 
   has_many :projects, dependent: :destroy
+  has_many :ideas, dependent: :destroy
   
   before_create :assign_role_to_user
 
