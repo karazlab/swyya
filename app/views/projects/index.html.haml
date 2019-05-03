@@ -5,3 +5,11 @@
   .col-12
     .row
       = render partial: 'projects/partials/projects_list', locals: { projects: @newest_projects }
+
+.row.mt-3
+  #heading-with-line.col-12
+    %h5
+      = t(:most_liked_projects)
+  .col-12
+    .row
+      = render partial: 'projects/partials/projects_list', locals: { projects: @most_liked_projects }

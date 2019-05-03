@@ -107,6 +107,8 @@ en:
   # M #
   most_recent: Most Recent
   minimum_password: characters minimum
+  most_liked_projects: Most Liked Projects
+  more_projects: More Projects
 
   # O #
   order_by: Order By
