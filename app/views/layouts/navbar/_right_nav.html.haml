@@ -11,6 +11,9 @@
       = link_to new_project_path, class: 'navbar-link' do
         = icon('fas', 'plus', t(:new_project))
     %li.nav-item
+      = link_to new_idea_path, class: 'navbar-link' do
+        = icon('fas', 'plus', t(:new_idea))
+    %li.nav-item
       = link_to user_board_path, class: 'navbar-link' do
         = icon('fas', 'clipboard-list', t(:board))
     %li.nav-item.dropdown

@@ -13,6 +13,9 @@ class Ability
     can %i[index read like dislike], Project
     can :manage, Project, user_id: user.id
 
+    can %i[index read like dislike], Idea
+    can :manage, Idea, user_id: user.id
+
     can :index, BoardsController
   end
 

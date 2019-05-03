@@ -62,7 +62,7 @@
               = icon('fas', 'eye', t(:active))
 
 :javascript
-  var project_liked  = #{project_liked?};
+  var project_liked  = #{object_liked?(@project)};
   var project_id     = #{@project.id};
   var project_likes  = #{@project.get_likes.size};
   var project_active = #{@project.status.eql?(STATUS[:active])}

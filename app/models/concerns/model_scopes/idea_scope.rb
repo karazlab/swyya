@@ -1,4 +1,4 @@
-module ModelScopes::ProjectScope
+module ModelScopes::IdeaScope
   extend ActiveSupport::Concern
 
   included do

@@ -3,26 +3,15 @@
     = t(:shared_projects)
 .row
   - @owned_projects.each do |project|
-    .col-12
+    .col-6
       .card
         .card-body#custom-body
-          %h5
-            = link_to project.title, project, class: 'title'
-          .row.text-left
-            .col
-              = link_to project.github_link, class: 'small icon-link' do
-                = icon('fab', 'github', t(:repository), title: t(:repository))
-            .col
-              %span.small
-                = icon('fas', 'heartbeat', title: t(:likes))
-              %span.small#likes_counter
-                = project.get_likes.size
-            .col  
-              %span.small
-                = icon('fas', 'clock', time_ago(project.created_at), title: t(:adding_date))
-            .col
+          .row
+            .col-8
+              %p
+                = link_to project.title, project, class: 'title'
+            .col-4.text-right
               = link_to edit_project_path(project), class: 'small icon-link' do
-                = icon('fas', 'edit', t(:edit))
-            .col
+                = icon('fas', 'edit', title: t(:edit))
               = link_to project_path(project), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do
-                = icon('fas', 'trash', t(:delete))
+                = icon('fas', 'trash', title: t(:delete))

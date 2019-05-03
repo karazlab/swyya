@@ -1,4 +1,4 @@
-class Project < ApplicationRecord
+class Idea < ApplicationRecord
   include ModelScopes
   include Votable
   include Statusable
@@ -8,9 +8,7 @@ class Project < ApplicationRecord
 
   belongs_to :user
 
-  validates_presence_of :title, :user, :github_link
+  validates_presence_of :title, :user
 
   delegate :username, :email, to: :user, prefix: true
-
-  acts_as_taggable_on :tech_stacks
 end
