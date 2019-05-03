@@ -1,0 +1,11 @@
+.row
+  #heading-with-line.col-12
+    %h5
+      = t(:listed_ideas)
+  .col-12
+    .row
+      = render partial: 'ideas/partials/ideas_list', locals: { ideas: @ideas, targeted_col: 4 }
+    .row
+      .mx-auto
+        .apple_pagination
+          = will_paginate @ideas

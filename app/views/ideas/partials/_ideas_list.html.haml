@@ -1,0 +1,10 @@
+- ideas.each do |idea|
+  %div{class: "col-#{targeted_col}"}
+    .card
+      .card-body#custom-body
+        .row
+          .col-12
+            %h5
+              = link_to idea.title, idea, class: 'title'
+            %p.card-text
+              = truncate(idea.description, length: 50)

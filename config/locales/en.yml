@@ -59,6 +59,7 @@ en:
   email: Email
   edit_profile: Edit Profile
   edit_project: Edit Project
+  edit_idea: Edit Idea
   edit: Edit
 
   # F #
@@ -93,11 +94,15 @@ en:
   liked_projects: Liked Projects
   leave_it: Leave it blank if you don't want to change it
   listed_projects: Listed Projects
+  listed_ideas: Listed Ideas
+  liked_ideas: Liked Ideas
 
   # N #
   name: Name
   new_project: New Project
   new_projects: New Projects
+  new_ideas: New Ideas
+  new_idea: New Idea
   new_members: New Members
   new_post: New Post
   no_comments: No Comments
@@ -110,6 +115,8 @@ en:
   minimum_password: characters minimum
   most_liked_projects: Most Liked Projects
   more_projects: More Projects
+  more_ideas: More Ideas
+  most_liked_ideas: Most Liked Ideas
 
   # O #
   order_by: Order By
@@ -149,6 +156,7 @@ en:
   submit: Submit
   send: Send
   shared_projects: Shared Projects
+  shared_ideas: Shared Ideas
 
   # T #
   tags: Tags

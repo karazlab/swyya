@@ -1,0 +1,13 @@
+#heading-with-line
+  %h5
+    = t(:liked_ideas)
+.card
+  .card-body#custom-body
+    %table.table.table-sm.table-borderless.mb-0.pb-0
+      %tbody
+        - @liked_ideas.each do |idea|
+          %tr
+            %td
+              = link_to idea.title, idea_path(idea), class: 'title'
+              .small= icon('fas', 'clock', time_ago(idea.created_at))
+              %hr

@@ -1,0 +1,13 @@
+-# frozen_string_literal: true
+= simple_form_for(@idea) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  #swyya-source-project
+    .form-group
+      %label= t(:title)
+      = f.input :title, required: true, autofocus: true, class: 'form-control', label: false
+    .form-group
+      %label= t(:description)
+      = f.input :description, class: 'form-control', label: false
+  .form-actions
+    = f.button :submit, t(:submit), class: 'btn btn-primary'
