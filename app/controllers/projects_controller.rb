@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project)
-          .permit(%i[title description image_url github_link])
+          .permit(%i[title description image_url github_link tech_stack_list])
           .merge(user_id: current_user.id)
   end
 

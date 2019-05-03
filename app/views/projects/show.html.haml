@@ -19,12 +19,17 @@
                 = icon('fas', 'heart', title: t(:dislike))
       %hr
         %p= simple_format(@project.description)
-      
+      - if @project.tech_stack_list.present?
+        %hr
+        - @project.tech_stack_list.each do |stack|
+          %span
+            .badge.tags-badge
+              = stack.titleize
       %hr
         .links
-          .row.text-center
+          .row.text-left
             .col
-              = link_to @project.github_link, class: 'small mr-1 icon-link', target: '_blank' do
+              = link_to @project.github_link, class: 'small icon-link', target: '_blank' do
                 = icon('fab', 'github', t(:repository), title: t(:repository))
             .col
               %span.small
@@ -47,7 +52,7 @@
             = link_to edit_project_path(@project), class: 'btn btn-info btn-sm btn-custom-width' do
               = icon('fas', 'edit', t(:edit))
           .col
-            = link_to project_path(@project), method: :delete, class: 'btn btn-sm btn-danger btn-custom-width', confirm: t(:delete_confirmation) do
+            = link_to project_path(@project), method: :delete, class: 'btn btn-sm btn-danger btn-custom-width', data: { confirm: t(:delete_confirmation) } do
               = icon('fas', 'trash', t(:delete))
           .col#hide
             = link_to hide_project_path(@project.id), onclick: 'hideProject()', method: :post, remote: true, class: 'btn btn-sm btn-dark btn-custom-width' do
@@ -57,7 +62,7 @@
               = icon('fas', 'eye', t(:active))
 
 :javascript
-  var project_liked = #{project_liked?};
-  var project_id    = #{@project.id};
-  var project_likes = #{@project.get_likes.size};
+  var project_liked  = #{project_liked?};
+  var project_id     = #{@project.id};
+  var project_likes  = #{@project.get_likes.size};
   var project_active = #{@project.status.eql?(STATUS[:active])}

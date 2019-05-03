@@ -149,7 +149,8 @@ en:
 
   # T #
   tags: Tags
-  tags_separated_by_commas: 'Separated by commas, ex: startups, code ..'
+  tech_stack: Tech Stack
+  tags_separated_by_commas: 'Separated by commas, ex: react, rails, python ..'
   title: Title
   'true': Yes
 

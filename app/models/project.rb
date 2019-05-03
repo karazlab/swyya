@@ -11,6 +11,7 @@ class Project < ApplicationRecord
   delegate :username, :email, to: :user, prefix: true
 
   acts_as_votable
+  acts_as_taggable_on :tech_stacks
 
   def like(actable_user)
     liked_by(actable_user)
