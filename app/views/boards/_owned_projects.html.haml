@@ -24,5 +24,5 @@
               = link_to edit_project_path(project), class: 'small icon-link' do
                 = icon('fas', 'edit', t(:edit))
             .col
-              = link_to project_path(project), method: :delete, class: 'small icon-link', confirm: t(:delete_confirmation) do
+              = link_to project_path(project), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do
                 = icon('fas', 'trash', t(:delete))

@@ -12,6 +12,11 @@
     .form-group
       %label= t(:image_url)
       = f.input :image_url, class: 'form-control', label: false
+    .form-group
+      %label= t(:tech_stack)
+      = f.input :tech_stack_list, value: @project.tech_stack_list.to_s, required: true, label: false, class: 'form-control'
+      %small.muted
+        = t(:tags_separated_by_commas)
   .form-group
     %label= t(:github_repo)
     = f.input :github_link, required: true, class: 'form-control', label: false
