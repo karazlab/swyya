@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :idea do
-    title { "MyString" }
-    description { "MyText" }
-    status { 1 }
-    user { nil }
+    title { Faker::Lorem.sentence }
+    description { Faker::Lorem.paragraph }
+    user { user }
   end
 end
