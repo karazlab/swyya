@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_devise_parameters, if: :devise_controller?
   before_action :set_paper_trail_whodunnit, on: %i[create update destroy], unless: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
+  end
+
   private
 
   def configure_devise_parameters

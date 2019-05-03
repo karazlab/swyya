@@ -10,7 +10,7 @@
   %body
     = render partial: 'layouts/navbar/main'
     = render partial: 'layouts/alerts'
-    .container.py-3
+    %div{class: "#{controller_name.eql?('visitors') ? 'container-fluid' : 'container'} py-3"}
       .row
         .col-12
           = yield
