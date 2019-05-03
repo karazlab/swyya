@@ -1,0 +1,25 @@
+.row
+  .col-8
+    .row
+      #heading-with-line.col-12
+        %h5
+          = t(:new_projects)
+      .col-12
+        .row
+          = render partial: 'projects/partials/projects_list', locals: { projects: @newest_projects, targeted_col: 6 }
+
+  .col-4
+    #heading-with-line.col-12
+      %h5
+        = t(:most_liked_projects)
+    .col-12
+      .row
+        = render partial: 'projects/partials/projects_list', locals: { projects: @most_liked_projects, targeted_col: 12 }
+
+.row.my-5
+  #heading-with-line.col-12
+    %h5
+      = t(:more_projects)
+  .col-12
+    .row
+      = render partial: 'projects/partials/projects_list', locals: { projects: @more_projects, targeted_col: 4 }

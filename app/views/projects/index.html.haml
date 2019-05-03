@@ -1,15 +1,11 @@
 .row
   #heading-with-line.col-12
     %h5
-      = t(:new_projects)
+      = t(:listed_projects)
   .col-12
     .row
-      = render partial: 'projects/partials/projects_list', locals: { projects: @newest_projects }
-
-.row.mt-3
-  #heading-with-line.col-12
-    %h5
-      = t(:most_liked_projects)
-  .col-12
+      = render partial: 'projects/partials/projects_list', locals: { projects: @projects, targeted_col: 4 }
     .row
-      = render partial: 'projects/partials/projects_list', locals: { projects: @most_liked_projects }
+      .mx-auto
+        .apple_pagination
+          = will_paginate @projects

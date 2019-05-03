@@ -2,8 +2,7 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @newest_projects = @projects.ordered_by_date.limit(NEWEST_PROJECTS_LIMIT)
-    @most_liked_projects = @projects.most_liked.limit(MOST_LIKED_PROJECTS_LIMIT)
+    @projects = @projects.active.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_USER)
   end
 
   def create
