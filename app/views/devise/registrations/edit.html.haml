@@ -14,9 +14,9 @@
         .form-group
           %label= t(:username)
           = f.input :username, required: true, label: false, class: 'form-control'
-        .form-group
-          %label= t(:picture)
-          = f.input :personal_photo, label: false, as: :file
+        -# .form-group
+        -#   %label= t(:picture)
+        -#   = f.input :personal_photo, label: false, as: :file
         .form-group
           %label= t(:password)
           = f.input :password, hint: t(:leave_it), required: false, label: false, class: 'form-control'

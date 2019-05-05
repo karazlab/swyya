@@ -1,9 +1,9 @@
 .navbar
   height: 75px
-  background-color: $BLUE !important
+  background-color: $GRAY !important
   .navbar-link
-    color: $GRAY !important
-    &:hover
+    color: $BLUE !important
+    &:hover, &:focus
       color: $APPLE !important
       text-decoration: none
   ul
@@ -17,9 +17,12 @@
     &:hover
       color: $APPLE
       opacity: .85
+    img
+      width: 75px
 
 .navbar-dropdown
   padding: 1px 7px !important
   color: $BLUE !important
-  &:hover
+  &:hover, &:focus
+    background-color: $GRAY !important
     color: $APPLE !important

@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @projects = @projects.active.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_USER)
+    @projects = @projects.ordered_by_date.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_USER)
   end
 
   def create
