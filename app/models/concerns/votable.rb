@@ -2,7 +2,7 @@ module Votable
   extend ActiveSupport::Concern
 
   included do
-    acts_as_votable
+    acts_as_votable cacheable_strategy: :update_columns
   end
 
   def like(actable_user)
