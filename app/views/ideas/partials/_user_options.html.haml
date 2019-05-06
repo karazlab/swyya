@@ -1,0 +1,17 @@
+- if can?(:manage, @idea, current_user)
+  #project-box
+    .card
+      .card-body
+        .row
+          .col
+            = link_to edit_idea_path(@idea), class: 'btn btn-info btn-sm btn-custom-width' do
+              = icon('fas', 'edit', t(:edit))
+          .col
+            = link_to idea_path(@idea), method: :delete, class: 'btn btn-sm btn-danger btn-custom-width', data: { confirm: t(:delete_confirmation) } do
+              = icon('fas', 'trash', t(:delete))
+          .col#hide
+            = link_to hide_idea_path(@idea.id), onclick: 'hideIdea()', method: :post, remote: true, class: 'btn btn-sm btn-dark btn-custom-width' do
+              = icon('fas', 'eye-slash', t(:hide))
+          .col#active
+            = link_to active_idea_path(@idea.id), onclick: 'activateIdea()', method: :post, remote: true, class: 'btn btn-sm btn-primary btn-custom-width' do
+              = icon('fas', 'eye', t(:active))

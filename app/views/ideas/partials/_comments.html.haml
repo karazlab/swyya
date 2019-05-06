@@ -1,0 +1,20 @@
+- if @comments.any?
+  #project-box
+    .card
+      .card-body
+        %h4= t(:comments)
+        %hr
+        - @comments.each do |comment|
+          .row
+            .col-8
+              .text-left
+                %span
+                  = icon('fas', 'comment', comment.content)
+            .col-4
+              .text-right
+                %span.small
+                  = icon('fas', 'user', user_information(comment), title: t(:user_information))
+                &nbsp |
+                = link_to comment_path(comment), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do
+                  = icon('fas', 'trash', title: t(:delete))
+          %hr

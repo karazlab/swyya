@@ -1,0 +1,35 @@
+#project-box
+  .card
+    .card-body
+      .row
+        .col-10
+          .text-left
+            %h4= @idea.title
+        .col-2
+          - if user_signed_in?
+            .text-right
+              = link_to like_idea_path(@idea.id), method: :post, remote: true, onclick: 'likeIdea()', class: 'text-muted', id: 'like_btn' do
+                = icon('far', 'heart', title: t(:like))
+              = link_to dislike_idea_path(@idea.id), method: :post, onclick: 'dislikeIdea()', class: 'text-muted', id: 'dislike_btn', remote: true do
+                = icon('fas', 'heart', title: t(:dislike))
+      %hr
+        %p= simple_format(@idea.description)
+      %hr
+        .links
+          .row.text-left
+            .col
+              %span.small
+                = icon('fas', 'comments', title: t(:comments))
+              %span.small
+                = @idea.comments.size
+            .col
+              %span.small
+                = icon('fas', 'heartbeat', title: t(:likes))
+              %span.small#likes_counter
+                = @idea.get_likes.size
+            .col  
+              = link_to '#', class: 'small mr-1 icon-link' do
+                = icon('fas', 'user', user_information(@idea), title: t(:added_by))
+            .col  
+              %span.small
+                = icon('fas', 'clock', time_ago(@idea.created_at), title: t(:adding_date))
