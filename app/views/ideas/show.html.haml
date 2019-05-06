@@ -21,6 +21,11 @@
           .row.text-left
             .col
               %span.small
+                = icon('fas', 'comments', title: t(:comments))
+              %span.small#likes_counter
+                = @idea.comments.size
+            .col
+              %span.small
                 = icon('fas', 'heartbeat', title: t(:likes))
               %span.small#likes_counter
                 = @idea.get_likes.size
@@ -49,6 +54,29 @@
             = link_to active_idea_path(@idea.id), onclick: 'activateIdea()', method: :post, remote: true, class: 'btn btn-sm btn-primary btn-custom-width' do
               = icon('fas', 'eye', t(:active))
 
+- if can?(:create, Comment, current_user)
+  = render partial: 'comments/add_comment'
+
+- if @comments.any?
+  #project-box
+    .card
+      .card-body
+        %h4= t(:comments)
+        %hr
+        - @comments.each do |comment|
+          .row
+            .col-8
+              .text-left
+                %span
+                  = icon('fas', 'comment', comment.content)
+            .col-4
+              .text-right
+                %span.small
+                  = icon('fas', 'user', user_information(comment), title: t(:user_information))
+                &nbsp |
+                = link_to comment_path(comment), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do
+                  = icon('fas', 'trash', title: t(:delete))
+          %hr
 :javascript
   var idea_liked  = #{object_liked?(@idea)};
   var idea_id     = #{@idea.id};

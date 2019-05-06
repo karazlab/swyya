@@ -1,0 +1,11 @@
+-# frozen_string_literal: true
+= simple_form_for(Comment.new) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  = f.hidden_field :idea_id, value: @idea.id
+  .form-group
+    %label
+      %h4= t(:comment)
+    = f.input :content, required: true, class: 'form-control', label: false
+  .form-actions
+    = f.button :submit, t(:comment), class: 'btn btn-primary'

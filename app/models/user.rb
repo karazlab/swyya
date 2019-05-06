@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy
   has_many :ideas, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   before_create :assign_role_to_user
 

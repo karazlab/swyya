@@ -5,6 +5,10 @@ class IdeasController < ApplicationController
     @ideas = @ideas.active.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_USER)
   end
 
+  def show
+    @comments = @idea.comments
+  end
+
   def create
     @idea = Idea.new(idea_params)
     @idea.save ? success_response : failure_response

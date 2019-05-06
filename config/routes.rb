@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  %i[ideas projects].each do |module_controller|
+  %i[projects].each do |module_controller|
     resources module_controller do
       member do
         post 'like'
@@ -12,6 +12,16 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :ideas do
+    member do
+      resources :comments
+      post 'like'
+      post 'dislike'
+      post 'hide'
+      post 'active'
+    end
+  end
+
   root 'visitors#index'
 
   get '/board', to: 'boards#index', as: 'user_board'

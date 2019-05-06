@@ -8,6 +8,8 @@ class Idea < ApplicationRecord
 
   belongs_to :user
 
+  has_many :comments, dependent: :destroy
+
   validates_presence_of :title, :user
 
   delegate :username, :email, to: :user, prefix: true

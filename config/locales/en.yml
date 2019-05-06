@@ -33,6 +33,7 @@ en:
   bio: Bio
   brief: Brief
   board: Board
+  by: 'by: '
 
   # C #
   categories: Categories
