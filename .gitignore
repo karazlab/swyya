@@ -2,6 +2,8 @@
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
+/node_modules
+yarn.lock
 
 db/*.sqlite3
 /db/*.sqlite3-journal
