@@ -14,7 +14,7 @@
       = f.input :image_url, class: 'form-control', label: false
     .form-group
       %label= t(:tech_stack)
-      = f.input :tech_stack_list, value: @project.tech_stack_list.to_s, required: true, label: false, class: 'form-control'
+      = f.text_field :tech_stack_list, value: @project.tech_stack_list.to_s, required: true, label: false, class: 'form-control'
       %small.muted
         = t(:tags_separated_by_commas)
   .form-group

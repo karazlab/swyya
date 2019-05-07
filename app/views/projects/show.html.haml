@@ -1,5 +1,12 @@
 = javascript_include_tag :projects
 
+- unless @project.tech_stack_list.present?
+  #project-box
+    .card.text-white.bg-success.mb-3
+      .card-body
+        %p.card-text
+          #{t(:add_tags)} #{link_to t(:edit), edit_project_path(@project), class: 'small muted'}
+
 #project-box
   .card
     .card-body
