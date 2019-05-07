@@ -1,4 +1,4 @@
-%nav.navbar.navbar-light.navbar-expand-lg.shadow-sm
+%nav{class: "navbar navbar-light navbar-expand-lg #{controller_name.eql?('visitors') ? '' : 'shadow-sm'}"}
   .container-fluid
     = link_to root_path, class: 'navbar-brand logo' do
       = image_tag('logo150.png')

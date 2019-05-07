@@ -1,0 +1,18 @@
+#welcome-section
+  @extend .mt-0, .w-100, .mb-5, .shadow-sm
+  height: 350px
+  background-color: $GRAY
+  .jumbotron
+    @extend .container
+    background-color: transparent
+    h1
+      small
+        color: $APPLE !important
+
+#search
+  @extend .my-5
+  .form-control
+    height: 50px
+    font-family: 'Montserrat', sans-serif !important
+    &:focus, &:active, &:active:focus
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, .075) inset, 0px 0px 8px rgba(94, 186, 176, .5) !important

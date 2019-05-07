@@ -1,0 +1,14 @@
+.row
+  #welcome-section
+    .jumbotron
+      %h1.display-4
+        Swyya
+        %small
+          Together we build
+      %p.lead
+        A community for sharing curated list of open source projects to contribute, Join & share your work.
+      %hr.my-4
+        .input-group.mb-3#search
+          %input.form-control{placeholder: "Search for Projects & Ideas based on tags, keywords or title", type: 'text'}
+          .input-group-append
+            = button_tag t(:search), class: 'btn btn-outline-primary'
