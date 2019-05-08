@@ -1,0 +1,9 @@
+#search-box
+  .card
+    .card-body
+      %h5
+        = t(:search_results)
+      %hr
+        .text-right.mb-2
+          %small.muted= "#{t(:showing)} #{SEARCH_RESULTS} #{t(:result_per_page)}"
+      = render partial: 'visitors/search_results'

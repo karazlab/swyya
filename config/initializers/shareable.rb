@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 ROLES = {
   user:       'user',
   superadmin: 'superadmin'
@@ -19,3 +21,5 @@ IDEAS_PER_PAGE_USER = 24
 
 NEWEST_IDEAS_LIMIT = 12
 MOST_LIKED_IDEAS_LIMIT = 6
+
+SEARCH_RESULTS = 20

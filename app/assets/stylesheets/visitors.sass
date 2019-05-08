@@ -10,9 +10,27 @@
         color: $APPLE !important
 
 #search
-  @extend .my-5
+  height: 60px !important
+  font-family: 'Montserrat', sans-serif !important
   .form-control
-    height: 50px
-    font-family: 'Montserrat', sans-serif !important
     &:focus, &:active, &:active:focus
       box-shadow: 0px 1px 1px rgba(0, 0, 0, .075) inset, 0px 0px 8px rgba(94, 186, 176, .5) !important
+
+#search-box
+  .card
+    color: $BLACK
+    background-color: $GRAY
+    @extend .shadow-sm, .border, .col-12
+    .links
+      a
+        color: $BLACK
+        &:hover
+          color: $APPLE
+          text-decoration: none
+
+.table-striped
+  td, th
+    background-color: $WHITE
+    @extend .shadow-sm, .border, .py-2
+    &:hover
+      background-color: $GRAY

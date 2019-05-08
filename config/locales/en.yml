@@ -86,6 +86,7 @@ en:
   idea: Idea
   image_url: Image Link
   inactive: Inactive
+  index_search: Search for Projects & Ideas based on tags, keywords or title
 
   # L #
   login: Log In
@@ -108,6 +109,7 @@ en:
   new_members: New Members
   new_post: New Post
   no_comments: No Comments
+  no_results: No Results
   newest: Newest
   not_authorized: You are not authorized to access requested page.
   new_password: New Password
@@ -146,6 +148,7 @@ en:
   review: In Review
   random: Random
   repository: Repository
+  result_per_page: result per page
 
   # S #
   settings: Settings
@@ -160,6 +163,9 @@ en:
   shared_projects: Shared Projects
   shared_ideas: Shared Ideas
   search: Search
+  swyya_description: A community for sharing curated list of open source projects to contribute, Join & share your work.
+  search_results: Search Results
+  showing: Showing
 
   # T #
   tags: Tags
@@ -177,3 +183,5 @@ en:
 
   # V #
   visible: Visible
+
+  # W #

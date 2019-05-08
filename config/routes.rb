@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   root 'visitors#index'
 
   get '/board', to: 'boards#index', as: 'user_board'
+  get '/search', to: 'visitors#search', as: 'search_results'
 end

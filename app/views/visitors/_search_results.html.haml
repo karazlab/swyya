@@ -1,0 +1,22 @@
+- if @results.any?
+  .row
+    .col
+      %table.table.table-striped.table-borderless.table-hover
+        %thead
+          %tr
+        %tbody
+          - @results.each do |result|
+            %tr
+              %td
+                = link_to result[:title], result[:link], class: 'title', target: '_blank'
+                %p
+                  = truncate(result[:description], length: 100)
+  .row
+    .mx-auto
+      .apple_pagination
+        = will_paginate @results
+
+- else
+  .text-center
+    %p
+      = t(:no_results)
