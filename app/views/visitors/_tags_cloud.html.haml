@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-12
+      .row
+        #heading-with-line.col-12
+          %h5
+            = t(:tags_cloud)
+        .col-12
+          .card
+            .card-body#custom-body
+              .row
+                .col-12
+                  - tag_cloud(@tags_cloud, %w()) do |tag, _css|
+                    = link_to search_results_path(search: tag.name), class: "btn btn-#{TAGS_COLORS.sample} mx-2" do
+                      = tag.name
+                      %span.badge.badge-light= tag.count
