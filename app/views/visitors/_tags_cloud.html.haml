@@ -11,6 +11,6 @@
               .row
                 .col-12
                   - tag_cloud(@tags_cloud, %w()) do |tag, _css|
-                    = link_to search_results_path(search: tag.name), class: "btn btn-#{TAGS_COLORS.sample} mx-2" do
+                    = link_to search_results_path(search: tag.name), class: "btn btn-sm btn-#{TAGS_COLORS.sample} mx-2 my-1" do
                       = tag.name
                       %span.badge.badge-light= tag.count

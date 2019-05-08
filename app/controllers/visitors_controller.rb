@@ -7,7 +7,7 @@ class VisitorsController < ApplicationController
     @most_liked_ideas    = Idea.most_liked.limit(MOST_LIKED_IDEAS_LIMIT)
     @more_ideas          = Idea.active.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_VISITOR)
 
-    @tags_cloud          = Project.tag_counts_on(:tech_stacks)
+    @tags_cloud          = Project.tag_counts_on(:tech_stacks).order(count: :desc).limit(TAGS_LIMIT)
   end
 
   def search

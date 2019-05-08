@@ -1,4 +1,5 @@
 require 'will_paginate/array'
+ActsAsTaggableOn.force_lowercase = true
 
 ROLES = {
   user:       'user',
@@ -24,4 +25,5 @@ MOST_LIKED_IDEAS_LIMIT = 6
 
 SEARCH_RESULTS = 20
 
+TAGS_LIMIT = 20
 TAGS_COLORS = %w[success primary danger warning info secondary light]
