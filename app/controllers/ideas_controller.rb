@@ -2,7 +2,7 @@ class IdeasController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @ideas = @ideas.active.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_USER)
+    @ideas = @ideas.ordered_by_date.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_USER)
   end
 
   def show
