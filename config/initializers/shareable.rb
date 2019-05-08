@@ -25,5 +25,5 @@ MOST_LIKED_IDEAS_LIMIT = 6
 
 SEARCH_RESULTS = 20
 
-TAGS_LIMIT = 20
+TAGS_LIMIT = 35
 TAGS_COLORS = %w[success primary danger warning info secondary light]
