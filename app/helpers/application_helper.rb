@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include ActsAsTaggableOn::TagsHelper
+
   def check_alert(key)
     case key
     when 'notice' then 'primary'
