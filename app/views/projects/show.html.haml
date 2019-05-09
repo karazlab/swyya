@@ -32,7 +32,7 @@
         - @project.tech_stack_list.each do |stack|
           %span
             .badge.tags-badge
-              = stack.titleize
+              = link_to stack.titleize, search_results_path(search: stack), class: 'white'
       %hr
         .links
           .row.text-left
