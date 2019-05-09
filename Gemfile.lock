@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    acme-client (0.4.1)
+      faraday (~> 0.9, >= 0.9.1)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -100,6 +102,8 @@ GEM
       railties (>= 4.2.0)
     faker (1.9.3)
       i18n (>= 0.7)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     font-awesome-sass (5.8.1)
       sassc (>= 1.11)
@@ -131,6 +135,10 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
+    heroku_ssl (0.8.2)
+      acme-client (~> 0.4.0)
+      rails (>= 4.0.0)
+      redis (>= 3.0)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -176,6 +184,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.10)
     multi_json (1.13.1)
+    multipart-post (2.1.0)
     nenv (0.3.0)
     netrc (0.11.0)
     nio4r (2.3.1)
@@ -238,6 +247,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redis (4.1.1)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.1)
@@ -364,6 +374,7 @@ DEPENDENCIES
   guard-rspec
   haml
   haml-rails (~> 2.0)
+  heroku_ssl
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
