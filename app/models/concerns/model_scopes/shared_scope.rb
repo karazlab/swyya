@@ -11,5 +11,9 @@ module ModelScopes::SharedScope
     scope :most_liked, lambda {
       active.order(cached_weighted_average: :desc)
     }
+
+    scope :random_order, lambda {
+      order('RANDOM()')
+    }
   end
 end
