@@ -13,4 +13,4 @@ A community for sharing curated list of open source projects to contribute, Join
 
 # Contribution
 As a believers in open-source projects, We are welcoming contributers who aim to build the community and make it stronger.
-You can read contributing guide & enjoy building from (/contributing.md)[Contribution Guide]
+You can read contributing guide & enjoy building from [Contribution Guide](/contributing.md)
