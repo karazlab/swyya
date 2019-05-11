@@ -1,0 +1,23 @@
+%footer
+  .container
+    .row
+      .col-4
+        %span.small
+          Copyright © 2019
+        %span.small#title
+          Swyya
+        %span.small
+          All rights reserved.
+      .col-8
+        %ul#contact-list
+          %li
+            = link_to '#' do
+              = image_tag('Octocat.png')
+              = t(:we_run_with_github_love)
+          %li= link_to t(:about), '#'
+          %li
+            = link_to 'https://facebook.com/swyyacom', target: '_blank' do
+              = icon('fab', 'facebook', t(:facebook))
+          %li
+            = link_to 'https://github.com/karazlab/swyya', target: '_blank' do
+              = icon('fab', 'github', t(:github))

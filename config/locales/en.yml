@@ -1,5 +1,10 @@
 en:
 
+  # Social
+  facebook: Facebook
+  github: Github
+  about: About
+
   # RATINGS
   weak: Weak
   very_weak: Very Weak
@@ -187,3 +192,4 @@ en:
   visible: Visible
 
   # W #
+  we_run_with_github_love: Swyya is integrated with Github
