@@ -1,3 +1,7 @@
+<p align='center'>
+ <img src='https://thepracticaldev.s3.amazonaws.com/i/oudju33r3si1didzqdyb.png'/>
+</p>
+
 # [![Build Status](https://travis-ci.org/karazlab/swyya.svg?branch=master)](https://travis-ci.org/karazlab/swyya)
 
 # About
