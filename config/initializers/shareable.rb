@@ -32,5 +32,6 @@ SOCIAL = {
   github:   'https://www.github.com/karazlab/swyya',
   facebook: 'https://www.facebook.com/swyyacom',
   twitter:  '#',
-  globe:    '#'
+  globe:    '#',
+  'product-hunt': 'https://www.producthunt.com/posts/swyya' 
 }.freeze

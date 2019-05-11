@@ -1,5 +1,5 @@
 footer
-  @extend .mt-3, .pb-1
+  @extend .mt-3, .mb-1
   bottom: 0
   width: 100%
   color: $BLACK
@@ -9,7 +9,7 @@ footer
     font-weight: 600 !important
   #contact-list
     list-style: none
-    @extend .mb-0, .pb-0, .text-left
+    @extend .mb-0, .pb-0, .text-center
     li
       @extend .mb-0, .pb-0, .pl-2
       display: inline-block
@@ -20,7 +20,8 @@ footer
           text-decoration: none
           color: $APPLE !important
     .github-notice
+      @extend .mt-1
       color: gray
       font-size: 10px
       img
-        max-width: 10%
+        max-width: 5%

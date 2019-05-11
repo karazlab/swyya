@@ -1,18 +1,20 @@
 %footer
   .container
     .row
-      .col-8
-        %span.small
-          Copyright © 2019
-        %span.small#title
-          Swyya
-        %span.small
-          All rights reserved.
-      .col-4
+      .col-12
         %ul#contact-list
           .row
             .col
-              - %w[globe facebook twitter github].each do |social|
+              %li
+                %span.small
+                  Copyright © 2019
+                %span.small#title
+                  Swyya
+                %span.small
+                  All rights reserved.
+          .row
+            .col
+              - %w[globe facebook product-hunt github].each do |social|
                 %li
                   = link_to SOCIAL[social.to_sym], target: '_blank' do
                     = icon("#{social.eql?('globe') ? 'fas' : 'fab'}", social, t(social))
