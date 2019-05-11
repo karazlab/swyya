@@ -7,18 +7,22 @@ class GithubFetcher
   end
 
   def fetch
-    cleared_link   = link.gsub(/.+?com/, '')
-    api_link       = GITHUB_LINK + cleared_link
-    github_request = Net::HTTP.get(URI(api_link))
-    record         = JSON.parse(github_request)
-    save_record_from_github(record)
+    cleared_link            = link.gsub(/.+?com/, '')
+    api_link                = URI(GITHUB_LINK + cleared_link)
+    api_topics_link         = GITHUB_LINK + cleared_link + '/topics'
+    api_link.query          = "client_id=#{ENV['GITHUB_ID']}&client_secret=#{ENV['GITHUB_SECRET']}"
+    github_request          = Net::HTTP.get(api_link)
+    record                  = JSON.parse(github_request)
+    project                 = save_record_from_github(record)
+    project.tech_stack_list = GithubTopicsFetcher.new(link: api_topics_link).fetch
+    project
   end
 
   private
 
   def save_record_from_github(record)
-    project_params = details_hash(record)
-    project        = Project.new(project_params)
+    project_params  = details_hash(record)
+    project         = Project.new(project_params)
   end
 
   def details_hash(record)
