@@ -28,3 +28,4 @@ public/system/profiles/pictures
 dump.rdb
 swyya.sh
 /spring-501/*
+lib/tasks/fetcher.rb
