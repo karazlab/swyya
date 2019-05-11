@@ -27,3 +27,10 @@ SEARCH_RESULTS = 20
 
 TAGS_LIMIT = 35
 TAGS_COLORS = %w[success primary danger warning info secondary light]
+
+SOCIAL = {
+  github:   'https://www.github.com/karazlab/swyya',
+  facebook: 'https://www.facebook.com/swyyacom',
+  twitter:  '#',
+  globe:    '#'
+}.freeze

@@ -1,23 +1,23 @@
 %footer
   .container
     .row
-      .col-4
+      .col-8
         %span.small
           Copyright © 2019
         %span.small#title
           Swyya
         %span.small
           All rights reserved.
-      .col-8
+      .col-4
         %ul#contact-list
-          %li
-            = link_to '#' do
-              = image_tag('Octocat.png')
-              = t(:we_run_with_github_love)
-          %li= link_to t(:about), '#'
-          %li
-            = link_to 'https://facebook.com/swyyacom', target: '_blank' do
-              = icon('fab', 'facebook', t(:facebook))
-          %li
-            = link_to 'https://github.com/karazlab/swyya', target: '_blank' do
-              = icon('fab', 'github', t(:github))
+          .row
+            .col
+              - %w[globe facebook twitter github].each do |social|
+                %li
+                  = link_to SOCIAL[social.to_sym], target: '_blank' do
+                    = icon("#{social.eql?('globe') ? 'fas' : 'fab'}", social, t(social))
+          .row
+            .col
+              %li.github-notice
+                = link_to SOCIAL[:github] do
+                  #{t(:we_run_with_github_love)} #{image_tag('Octocat.png')}
