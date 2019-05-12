@@ -54,6 +54,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'will_paginate', '~> 3.1.0'
+gem 'meta-tags'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    set_default_keywords(title = I18n.t(:projects))
     @projects = @projects.ordered_by_date.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_USER)
   end
 
@@ -10,6 +11,10 @@ class ProjectsController < ApplicationController
     @project.save ? success_response : failure_response
   end
 
+  def show
+    set_default_keywords(title = @project.title, desciption = @project.description, keywords = @project.try(:tech_stack_list) || DEFAULT_KEYWORDS )
+  end
+  
   def update
     @project.update(project_params) ? success_response : failure_response
   end

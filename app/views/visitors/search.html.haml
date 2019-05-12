@@ -5,5 +5,6 @@
         = t(:search_results)
       %hr
         .text-right.mb-2
-          %small.muted= "#{t(:showing)} #{SEARCH_RESULTS} #{t(:result_per_page)}"
+          %small.apple= "#{params[:search]} #{t(:results)}"
+          %small.muted= "| #{t(:showing)} #{SEARCH_RESULTS} #{t(:result_per_page)}"
       = render partial: 'visitors/search_results'

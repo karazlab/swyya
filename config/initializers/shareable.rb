@@ -35,3 +35,6 @@ SOCIAL = {
   globe:    '#',
   'product-hunt': 'https://www.producthunt.com/posts/swyya' 
 }.freeze
+
+DEFAULT_KEYWORDS = ['latest open source', 'best open source projects', 'open source', 'open-source', 'open source projects', 'open source development', 'open source code', 'open source community', 'free source code', 'free open source']
+DEFAULT_TITLE    = 'A community for sharing curated list of open source projects to contribute'

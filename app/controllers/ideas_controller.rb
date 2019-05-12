@@ -2,11 +2,13 @@ class IdeasController < ApplicationController
   load_and_authorize_resource
 
   def index
+    set_default_keywords(title = I18n.t(:ideas))
     @ideas = @ideas.ordered_by_date.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_USER)
   end
 
   def show
     @comments = @idea.comments
+    set_default_keywords(title = @idea.title, desciption = @idea.description)
   end
 
   def create

@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in, keys: %i[email password])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[username email password password_confirmation current_password])
   end
+
+  def set_default_keywords(title = DEFAULT_TITLE, description = DEFAULT_TITLE, keywords = DEFAULT_KEYWORDS)
+    @title       = title
+    @description = description
+    @keywords    = keywords
+  end
 end

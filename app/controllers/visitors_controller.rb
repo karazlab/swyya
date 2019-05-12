@@ -1,5 +1,7 @@
 class VisitorsController < ApplicationController
   def index
+    set_default_keywords
+
     @newest_projects     = Project.ordered_by_date.limit(NEWEST_PROJECTS_LIMIT).random_order
     @most_liked_projects = Project.most_liked.limit(MOST_LIKED_PROJECTS_LIMIT).random_order
     @more_projects       = Project.active.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_VISITOR).random_order
@@ -11,6 +13,7 @@ class VisitorsController < ApplicationController
   end
 
   def search
+    set_default_keywords('Search Open Source Projects')
     if params[:search].present?
       projects = Project.searchable(params[:search])
       ideas    = Idea.searchable(params[:search])
