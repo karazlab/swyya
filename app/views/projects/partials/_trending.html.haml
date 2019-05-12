@@ -7,6 +7,6 @@
             = image_tag(project[:image_url].present? ? project[:image_url] : 'missing.png', class: 'card-img-top')
           .col-9
             %h5
-              = link_to project[:name], project[:url], class: 'title'
+              = link_to project[:name], project[:url], class: 'title', target: '_blank'
             %p.card-text
               = truncate(project[:description], length: 50)
