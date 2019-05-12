@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
   def index
     set_default_keywords(title = I18n.t(:projects))
     @projects = @projects.ordered_by_date.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_USER)
-    @trending = TrendingOnGithub.new(link: TRENDING_LINK).fetch.first(TRENDING_LIMIT)
   end
 
   def create
