@@ -1,0 +1,12 @@
+- projects.each do |project|
+  %div{class: "col-#{targeted_col}"}
+    .card
+      .card-body#custom-body
+        .row
+          .col-3
+            = image_tag(project[:image_url].present? ? project[:image_url] : 'missing.png', class: 'card-img-top')
+          .col-9
+            %h5
+              = link_to project[:name], project[:url], class: 'title'
+            %p.card-text
+              = truncate(project[:description], length: 50)

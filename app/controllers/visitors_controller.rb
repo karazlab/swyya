@@ -10,6 +10,8 @@ class VisitorsController < ApplicationController
     @more_ideas          = Idea.active.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_VISITOR).random_order
 
     @tags_cloud          = Project.tag_counts_on(:tech_stacks).order(count: :desc).limit(TAGS_LIMIT).order('RANDOM()')
+
+    @trending            = TrendingOnGithub.new(link: TRENDING_LINK).fetch.first(TRENDING_LIMIT)
   end
 
   def search

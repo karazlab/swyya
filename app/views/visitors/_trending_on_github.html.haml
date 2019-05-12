@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-12
+      .row
+        #heading-with-line.col-12
+          %h5
+            = t(:trending_on_github)
+        .col-12
+          .row
+            = render partial: 'projects/partials/trending', locals: { projects: @trending, targeted_col: 4 }
