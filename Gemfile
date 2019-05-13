@@ -42,6 +42,7 @@ gem 'simple_form'
 # User Configuration
 gem 'country_select'
 gem 'devise'
+gem 'omniauth-github'
 gem 'cancancan'
 gem 'rolify'
 gem 'paperclip', '~> 6.0.0'
