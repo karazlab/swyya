@@ -1,3 +1,7 @@
+@media (max-width: 768px)
+  #welcome-section
+    height: auto !important
+  
 #welcome-section
   @extend .mt-0, .w-100, .mb-5, .shadow-sm
   height: 350px
@@ -20,7 +24,7 @@
   .card
     color: $BLACK
     background-color: $GRAY
-    @extend .shadow-sm, .border, .col-12
+    @extend .shadow-sm, .border, .col-lg-12, .col-md-12, .col-sm-12
     .links
       a
         color: $BLACK
@@ -28,9 +32,9 @@
           color: $APPLE
           text-decoration: none
 
-.table-striped
-  td, th
-    background-color: $WHITE
-    @extend .shadow-sm, .border, .py-2
-    &:hover
-      background-color: $GRAY
+  .table-striped
+    td, th
+      background-color: $WHITE
+      @extend .shadow-sm, .border, .py-2
+      &:hover
+        background-color: $GRAY

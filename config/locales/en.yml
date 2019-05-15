@@ -15,8 +15,8 @@ en:
   very_strong: Very Strong
 
   will_paginate:
-    next_label: Next Page
-    previous_label: Previous Page
+    next_label: '>>'
+    previous_label: '<<'
   arabic: عربي
   english: English
 

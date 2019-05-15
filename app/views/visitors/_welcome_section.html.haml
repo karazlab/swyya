@@ -1,17 +1,21 @@
 .row
   #welcome-section
     .jumbotron
-      %h1.display-4
-        Swyya
-        %small
-          Together we build
-      %p.lead
-        = t(:swyya_description)
-      %hr.my-4
-        .my-5
-          = form_tag search_results_path, method: :get do
-            #search
-              .input-group
-                = text_field_tag :search, params[:search], { class: 'form-control', placeholder: t(:index_search) }
-                .input-group-append
-                  = submit_tag t(:search), class: 'btn btn-outline-primary search-btn'
+      .row
+        .col-12
+          %h1.display-4
+            Swyya
+            %small
+              Together we build
+          %p.lead
+            = t(:swyya_description)
+      .row
+        .col-12
+          %hr
+            .my-5
+              = form_tag search_results_path, method: :get do
+                #search
+                  .input-group
+                    = text_field_tag :search, params[:search], { class: 'form-control', placeholder: t(:index_search) }
+                    .input-group-append
+                      = submit_tag t(:search), class: 'btn btn-outline-primary search-btn'

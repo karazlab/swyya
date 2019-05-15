@@ -1,11 +1,11 @@
 - projects.each do |project|
-  %div{class: "col-#{targeted_col}"}
+  %div{class: "col-lg-#{targeted_col} col-md-#{targeted_col} col-sm-12 col-xs-12"}
     .card
       .card-body#custom-body
         .row
-          .col-3
+          .col-lg-3.col-md-3.col-sm-12
             = image_tag(project[:image_url].present? ? project[:image_url] : 'missing.png', class: 'card-img-top')
-          .col-9
+          .col-lg-9.col-md-9.col-sm-12
             %h5
               = link_to project[:name], project[:url], class: 'title', target: '_blank'
             %p.card-text

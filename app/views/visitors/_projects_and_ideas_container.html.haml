@@ -1,6 +1,6 @@
 .container
   .row
-    .col-8
+    .col-lg-8.col-md-8.col-sm-12
       .row
         #heading-with-line.col-12
           %h5
@@ -9,7 +9,7 @@
           .row
             = render partial: 'projects/partials/projects_list', locals: { projects: @newest_projects, targeted_col: 6 }
 
-    .col-4
+    .col-lg-4.col-md-4.col-sm-12
       .row
         #heading-with-line.col-12
           %h5
@@ -18,7 +18,7 @@
           .row
             = render partial: 'projects/partials/projects_list', locals: { projects: @most_liked_projects, targeted_col: 12 }
   .row.my-5
-    .col-4
+    .col-lg-4.col-md-4.col-sm-12
       .row
         #heading-with-line.col-12
           %h5
@@ -27,7 +27,7 @@
           .row
             = render partial: 'ideas/partials/ideas_list', locals: { ideas: @most_liked_ideas, targeted_col: 12 }
 
-    .col-8
+    .col-lg-8.col-md-8.col-sm-12
       .row
         #heading-with-line.col-12
           %h5

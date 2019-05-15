@@ -2,10 +2,10 @@
   .card
     .card-body
       .row
-        .col-10
+        .col-lg-10.col-md-10.col-sm-12
           .text-left
             %h4= @idea.title
-        .col-2
+        .col-lg-2.col-md-2.col-sm-12
           - if user_signed_in?
             .text-right
               = link_to like_idea_path(@idea.id), method: :post, remote: true, onclick: 'likeIdea()', class: 'text-muted', id: 'like_btn' do
@@ -17,19 +17,19 @@
       %hr
         .links
           .row.text-left
-            .col
+            .col-lg-3.col-md-3.col-sm-12
               %span.small
                 = icon('fas', 'comments', title: t(:comments))
               %span.small
                 = @idea.comments.size
-            .col
+            .col-lg-3.col-md-3.col-sm-12
               %span.small
                 = icon('fas', 'heartbeat', title: t(:likes))
               %span.small#likes_counter
                 = @idea.get_likes.size
-            .col  
+            .col-lg-3.col-md-3.col-sm-12
               = link_to '#', class: 'small mr-1 icon-link' do
                 = icon('fas', 'user', user_information(@idea), title: t(:added_by))
-            .col  
+            .col-lg-3.col-md-3.col-sm-12
               %span.small
                 = icon('fas', 'clock', time_ago(@idea.created_at), title: t(:adding_date))

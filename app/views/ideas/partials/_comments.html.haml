@@ -6,11 +6,11 @@
         %hr
         - @comments.each do |comment|
           .row
-            .col-8
+            .col-lg-8.col-md-8.col-sm-12
               .text-left
                 %span
                   = icon('fas', 'comment', comment.content)
-            .col-4
+            .col-lg-4.col-md-4.col-sm-12
               .text-right
                 %span.small
                   = icon('fas', 'user', user_information(comment), title: t(:user_information))

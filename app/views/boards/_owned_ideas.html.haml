@@ -3,14 +3,14 @@
     = t(:shared_ideas)
 .row
   - @owned_ideas.each do |idea|
-    .col-6
+    .col-lg-6.col-md-6.col-sm-12
       .card
         .card-body#custom-body
           .row
-            .col-8
+            .col-lg-8.col-md-8.col-sm-12
               %p
                 = link_to idea.title, idea, class: 'title'
-            .col-4.text-right
+            .col-lg-4.col-md-4.col-sm-12.text-right
               = link_to edit_idea_path(idea), class: 'small icon-link' do
                 = icon('fas', 'edit', title: t(:edit))
               = link_to idea_path(idea), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do

@@ -12,13 +12,13 @@
   .card
     .card-body
       .row
-        .col-1
+        .col-lg-1.col-md-1.col-sm-2.col-xs-2
           .text-left
             = image_tag(project_image(@project), class: 'card-image')
-        .col-9
+        .col-lg-9.col-md-9.col-sm-8.col-xs-8
           .text-left
             %h4= @project.title
-        .col-2
+        .col-lg-2.col-md-2.col-sm-2.col-xs-2
           - if user_signed_in?
             .text-right
               = link_to like_project_path(@project.id), method: :post, remote: true, onclick: 'likeProject()', class: 'text-muted', id: 'like_btn' do
@@ -36,18 +36,18 @@
       %hr
         .links
           .row.text-left
-            .col
+            .col-lg-3.col-md-3.col-sm-12
               = link_to @project.github_link, class: 'small icon-link', target: '_blank' do
                 = icon('fab', 'github', t(:repository), title: t(:repository))
-            .col
+            .col-lg-3.col-md-3.col-sm-12
               %span.small
                 = icon('fas', 'heartbeat', title: t(:likes))
               %span.small#likes_counter
                 = @project.get_likes.size
-            .col  
+            .col-lg-3.col-md-3.col-sm-12  
               = link_to '#', class: 'small mr-1 icon-link' do
                 = icon('fas', 'user', user_information(@project), title: t(:added_by))
-            .col  
+            .col-lg-3.col-md-3.col-sm-12 
               %span.small
                 = icon('fas', 'clock', time_ago(@project.created_at), title: t(:adding_date))
 
@@ -56,16 +56,16 @@
     .card
       .card-body
         .row
-          .col
+          .col-lg-4.col-md-4.col-sm-12
             = link_to edit_project_path(@project), class: 'btn btn-info btn-sm btn-custom-width' do
               = icon('fas', 'edit', t(:edit))
-          .col
+          .col-lg-4.col-md-4.col-sm-12
             = link_to project_path(@project), method: :delete, class: 'btn btn-sm btn-danger btn-custom-width', data: { confirm: t(:delete_confirmation) } do
               = icon('fas', 'trash', t(:delete))
-          .col#hide
+          .col-lg-4.col-md-4.col-sm-12#hide
             = link_to hide_project_path(@project.id), onclick: 'hideProject()', method: :post, remote: true, class: 'btn btn-sm btn-dark btn-custom-width' do
               = icon('fas', 'eye-slash', t(:hide))
-          .col#active
+          .col-lg-4.col-md-4.col-sm-12#active
             = link_to active_project_path(@project.id), onclick: 'activateProject()', method: :post, remote: true, class: 'btn btn-sm btn-primary btn-custom-width' do
               = icon('fas', 'eye', t(:active))
 
