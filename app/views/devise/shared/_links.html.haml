@@ -1,13 +1,16 @@
+- if devise_mapping.omniauthable?
+  %span.apple.mr-3= t(:sign_in_with)
+  - resource_class.omniauth_providers.each do |provider|
+    = link_to omniauth_authorize_path(resource_name, provider) do
+      = icon('fab', provider, "#{OmniAuth::Utils.camelize(provider)}")
+    .mx-2
+  %hr
 - if controller_name != 'sessions'
   = link_to t(:login), new_session_path(resource_name)
-  %br/
+  .mb-1
 - if devise_mapping.registerable? && controller_name != 'registrations'
   = link_to t(:register), new_registration_path(resource_name)
-  %br/
+  .mb-1
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
   = link_to t(:forgot_your_password?), new_password_path(resource_name)
-  %br/
-- if devise_mapping.omniauthable?
-  - resource_class.omniauth_providers.each do |provider|
-    = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
-    %br/
+  .mb-1

@@ -1,5 +1,14 @@
 RSpec.describe User, type: :model do
-  let(:user) { create(:user) }
+  let(:user)      { create(:user) }
+  let(:auth_hash) { OmniAuth::AuthHash.new({
+    provider: 'github',
+    uid:      '1234',
+    info: {
+      email:    Faker::Internet.email,
+      name:     Faker::Name.name,
+      nickname: Faker::Internet.username
+    }
+  }) }
 
   describe '#Validations' do
     it { is_expected.to validate_presence_of(:email) }
@@ -16,26 +25,17 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many(:ideas).dependent(:destroy) }
     it { is_expected.to have_many(:comments).dependent(:destroy) }
   end
-
-  auth_hash = OmniAuth::AuthHash.new({
-    provider: 'github',
-    uid: '1234',
-    info: {
-      email: "user@example.com",
-      name: "Justin Bieber",
-      nickname: "UserExamplehash"
-    }
-  })
   
-  describe "#from_omniauth" do
-      it "retrieves an existing user" do
+  describe '#from_omniauth' do
+      it 'retrieves an existing user' do
+        password = Faker::Internet.password
         user = User.new(
-          provider: "github", 
-          uid: 1234,
-          username: "UserExample",
-          email: "user@example.com",
-          password: 'password', 
-          password_confirmation: 'password'
+          provider:              'github', 
+          uid:                   '1234',
+          username:              Faker::Internet.username,
+          email:                 Faker::Internet.email,
+          password:              password, 
+          password_confirmation: password
         )
         user.save
         omniauth_user = User.from_omniauth(auth_hash)
@@ -43,7 +43,7 @@ RSpec.describe User, type: :model do
         expect(user).to eq(omniauth_user)
     end
   
-    it "creates a new user if one doesn't already exist" do
+    it 'creates a new user if one doesnt already exist' do
       expect(User.count).to eq(0)
   
       omniauth_user = User.from_omniauth(auth_hash)
