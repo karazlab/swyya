@@ -18,3 +18,6 @@ A community for sharing curated list of open source projects to contribute, Join
 # Contribution
 As a believers in open-source projects, We are welcoming contributers who aim to build the community and make it stronger.
 You can read contributing guide & enjoy building from [Contribution Guide](/contributing.md)
+
+# License
+Swyya is licensed under the [MIT License](https://opensource.org/licenses/MIT), [Read more ..](https://github.com/karazlab/swyya/blob/master/LICENSE)
