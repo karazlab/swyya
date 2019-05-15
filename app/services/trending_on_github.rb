@@ -20,7 +20,7 @@ class TrendingOnGithub
       records_hash[index] = { name:        record['name'],
                               url:         record['url'],
                               description: record['description'],
-                              image_url:   record['builtBy'][0]['avatar']}
+                              image_url:   record['builtBy'].present? ? record['builtBy'][0]['avatar'] : ActionController::Base.helpers.asset_path('missing.png')}
     end
     records_hash_filtered(records_hash)
   end
