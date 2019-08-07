@@ -9,6 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'favicon.ico'
     = display_meta_tags site: 'Swyya', title: @title , description: @description, keywords: @keywords
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=#{ENV['TRACK_ID']}"}
   %body
     = render partial: 'layouts/navbar/main'
     = render partial: 'layouts/alerts'
@@ -21,3 +22,8 @@
 
 :javascript
   window.$crisp=[];window.CRISP_WEBSITE_ID="#{ENV['CRISP_ID']}";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', "#{ENV['TRACK_ID']}");
