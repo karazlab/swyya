@@ -10,6 +10,7 @@
     = favicon_link_tag 'favicon.ico'
     = display_meta_tags site: 'Swyya', title: @title , description: @description, keywords: @keywords
     %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=#{ENV['TRACK_ID']}"}
+    %script{:async => "", :src => "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
   %body
     = render partial: 'layouts/navbar/main'
     = render partial: 'layouts/alerts'
@@ -19,11 +20,13 @@
           = yield
     = render partial: 'layouts/footer'
 
-
 :javascript
   window.$crisp=[];window.CRISP_WEBSITE_ID="#{ENV['CRISP_ID']}";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', "#{ENV['TRACK_ID']}");
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "#{ENV['ADS']}",
+    enable_page_level_ads: true
+  });
