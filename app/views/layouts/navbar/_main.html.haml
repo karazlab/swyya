@@ -1,5 +1,5 @@
 %nav{class: "navbar navbar-light navbar-expand-lg #{controller_name.eql?('visitors') && action_name.eql?('index') ? '' : 'shadow-sm'}"}
-  .container-fluid
+  .container
     = link_to root_path, class: 'navbar-brand logo' do
       = image_tag('logo150.png')
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
