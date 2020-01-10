@@ -3,7 +3,10 @@ class ProjectsController < ApplicationController
 
   def index
     set_default_keywords(title = I18n.t(:projects))
-    @projects = @projects.ordered_by_date.paginate(page: params[:page], per_page: PROJECTS_PER_PAGE_USER)
+    @projects = @projects.includes(:user)
+                         .ordered_by_date
+                         .paginate(page: params[:page],
+                                   per_page: PROJECTS_PER_PAGE_USER)
   end
 
   def create
@@ -12,9 +15,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    set_default_keywords(title = @project.title, desciption = @project.description, keywords = @project.try(:tech_stack_list) || DEFAULT_KEYWORDS )
+    set_default_keywords(title = @project.title,
+                         desciption = @project.description,
+                         keywords = @project.try(:tech_stack_list) || DEFAULT_KEYWORDS )
   end
-  
+
   def update
     @project.update(project_params) ? success_response : failure_response
   end
@@ -61,7 +66,8 @@ class ProjectsController < ApplicationController
 
   def render_success_json_response
     render json: {  message: t(:process_success),
-                    data:    { counts: @project.get_likes.count, active: @project.status.eql?(STATUS[:active]) } }
+                    data:    { counts: @project.get_likes.count,
+                               active: @project.status.eql?(STATUS[:active]) } }
   end
 
   def fetch_from_github

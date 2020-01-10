@@ -3,7 +3,10 @@ class IdeasController < ApplicationController
 
   def index
     set_default_keywords(title = I18n.t(:ideas))
-    @ideas = @ideas.ordered_by_date.paginate(page: params[:page], per_page: IDEAS_PER_PAGE_USER)
+    @ideas = @ideas.includes(:user)
+                   .ordered_by_date
+                   .paginate(page: params[:page],
+                             per_page: IDEAS_PER_PAGE_USER)
   end
 
   def show
@@ -62,6 +65,7 @@ class IdeasController < ApplicationController
 
   def render_success_json_response
     render json: {  message: t(:process_success),
-                    data:    { counts: @idea.get_likes.count, active: @idea.status.eql?(STATUS[:active]) } }
+                    data:    { counts: @idea.get_likes.count,
+                      active: @idea.status.eql?(STATUS[:active]) } }
   end
 end
