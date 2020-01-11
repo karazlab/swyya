@@ -17,7 +17,8 @@
             = image_tag(project_image(@project), class: 'card-image')
         .col-lg-9.col-md-9.col-sm-8.col-xs-8
           .text-left
-            %h4= @project.title
+            %h5
+              = @project.title
         .col-lg-2.col-md-2.col-sm-2.col-xs-2
           - if user_signed_in?
             .text-right
@@ -44,10 +45,10 @@
                 = icon('fas', 'heartbeat', title: t(:likes))
               %span.small#likes_counter
                 = @project.get_likes.size
-            .col-lg-3.col-md-3.col-sm-12  
+            .col-lg-3.col-md-3.col-sm-12
               = link_to '#', class: 'small mr-1 icon-link' do
                 = icon('fas', 'user', user_information(@project), title: t(:added_by))
-            .col-lg-3.col-md-3.col-sm-12 
+            .col-lg-3.col-md-3.col-sm-12
               %span.small
                 = icon('fas', 'clock', time_ago(@project.created_at), title: t(:adding_date))
 
