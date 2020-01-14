@@ -2,33 +2,38 @@ class VisitorsController < ApplicationController
   def index
     set_default_keywords
 
-    @newest_projects     = Project.ordered_by_date
-                                  .limit(NEWEST_PROJECTS_LIMIT)
-                                  .random_order
+    @newest_projects = Project.ordered_by_date
+                              .limit(NEWEST_PROJECTS_LIMIT)
+                              .random_order
+
     @most_liked_projects = Project.most_liked
                                   .limit(MOST_LIKED_PROJECTS_LIMIT)
                                   .random_order
-    @more_projects       = Project.active
-                                  .paginate(page: params[:page],
-                                            per_page: PROJECTS_PER_PAGE_VISITOR)
-                                  .random_order
 
-    @most_liked_ideas    = Idea.most_liked
-                               .limit(MOST_LIKED_IDEAS_LIMIT)
-                               .random_order
-    @more_ideas          = Idea.active
-                               .paginate(page: params[:page],
-                                         per_page: IDEAS_PER_PAGE_VISITOR)
-                               .random_order
+    @more_projects = Project.active
+                     .paginate(page: params[:page],
+                               per_page: PROJECTS_PER_PAGE_VISITOR)
+                     .random_order
 
-    @tags_cloud          = Project.tag_counts_on(:tech_stacks)
-                                  .order(count: :desc)
-                                  .limit(TAGS_LIMIT)
-                                  .order('RANDOM()')
+    @most_liked_ideas = Idea.most_liked
+                            .limit(MOST_LIKED_IDEAS_LIMIT)
+                            .random_order
 
-    @trending            = TrendingOnGithub.new(link: TRENDING_LINK)
-                                           .fetch
-                                           .first(TRENDING_LIMIT)
+    @more_ideas = Idea.active
+                      .paginate(page: params[:page],
+                                per_page: IDEAS_PER_PAGE_VISITOR)
+                      .random_order
+
+    @tags_cloud = Project.tag_counts_on(:tech_stacks)
+                         .order(count: :desc)
+                         .limit(TAGS_LIMIT)
+                         .order('RANDOM()')
+
+    @trending = Rails.cache.fetch(expires_in: 1.day) do
+                  TrendingOnGithub.new(link: TRENDING_LINK)
+                                  .fetch
+                                  .first(TRENDING_LIMIT)
+                end
   end
 
   def search
