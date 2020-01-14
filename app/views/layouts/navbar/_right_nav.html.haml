@@ -1,4 +1,10 @@
 %ul.navbar-nav.ml-auto
+  %li.nav-item
+    = link_to projects_path, class: 'navbar-link' do
+      = icon('fas', 'project-diagram', t(:projects))
+  %li.nav-item
+    = link_to ideas_path, class: 'navbar-link' do
+      = icon('fas', 'brain', t(:ideas))
   - unless user_signed_in?
     %li.nav-item
       = link_to new_user_session_path, class: 'navbar-link' do

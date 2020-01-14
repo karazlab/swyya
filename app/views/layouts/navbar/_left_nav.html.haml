@@ -1,7 +1,6 @@
-%ul.navbar-nav.mr-auto
-  %li.nav-item
-    = link_to projects_path, class: 'navbar-link' do
-      = icon('fas', 'project-diagram', t(:projects))
-  %li.nav-item
-    = link_to ideas_path, class: 'navbar-link' do
-      = icon('fas', 'brain', t(:ideas))
+= form_tag search_results_path, class: 'w-50 pl-3', method: :get do
+  #search
+    .input-group
+      = text_field_tag :search, params[:search], { class: 'form-control', placeholder: t(:index_search) }
+      .input-group-append
+        = submit_tag t(:search), class: 'btn btn-outline-primary search-btn'

@@ -35,3 +35,22 @@
     &:after
       left: 0.5em
       margin-right: -50%
+
+
+.title-image
+  width: 50px
+  @extend .border, .shadow-sm, .rounded-circle,
+
+.github-image
+  width: 50px
+  @extend .border, .shadow-sm, .rounded-circle
+
+.list-group-item
+  background-color: $GRAY
+  max-height: 75px
+  .list-group-item-action
+    color: $BLACK
+  .title
+    color: #5EBAB0;
+    font-size: 1.0rem;
+  @extend .mb-2

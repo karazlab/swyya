@@ -1,12 +1,12 @@
-- projects.each do |project|
-  %div{class: "col-lg-#{targeted_col} col-md-#{targeted_col} col-sm-12 col-xs-12"}
-    .card
-      .card-body#custom-body
-        .row
-          .col-lg-3.col-md-3.col-sm-12
-            = image_tag(project[:image_url].present? ? project[:image_url] : 'missing.png', class: 'card-img-top')
-          .col-lg-9.col-md-9.col-sm-12
-            %h5
-              = link_to project[:name], project[:url], class: 'title', target: '_blank'
-            %p.card-text
-              = truncate(project[:description], length: 50)
+.list-group
+  - projects.each do |project|
+    = link_to project[:url], target: '_blank', class: 'list-group-item list-group-item-action' do
+      .row
+        .col-2
+          = image_tag(project[:image_url].present? ? project[:image_url] : 'missing.png', class: 'github-image')
+        .col-10
+          .ml-3
+            %h5.title
+              = project[:name]
+            %p
+              = truncate(project[:description], length: 30)
