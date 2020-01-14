@@ -1,45 +1,20 @@
-.container
-  .row
-    .col-lg-8.col-md-8.col-sm-12
-      .row
-        #heading-with-line.col-12
-          %h5
-            = t(:new_projects)
-        .col-12
-          .row
-            = render partial: 'projects/partials/projects_list', locals: { projects: @newest_projects, targeted_col: 6 }
+.row
+  .col-lg-12.col-md-12.col-sm-12
+    .row
+      #heading-with-line.col-12
+        %h5
+          = t(:new_projects)
+      .col-12
+        .row
+          .col
+            = render partial: 'projects/partials/projects_list', locals: { projects: @newest_projects, length: 50 }
 
-    .col-lg-4.col-md-4.col-sm-12
-      .row
-        #heading-with-line.col-12
-          %h5
-            = t(:most_liked_projects)
-        .col-12
-          .row
-            = render partial: 'projects/partials/projects_list', locals: { projects: @most_liked_projects, targeted_col: 12 }
-  .row.my-5
-    .col-lg-4.col-md-4.col-sm-12
-      .row
-        #heading-with-line.col-12
-          %h5
-            = t(:most_liked_ideas)
-        .col-12
-          .row
-            = render partial: 'ideas/partials/ideas_list', locals: { ideas: @most_liked_ideas, targeted_col: 12 }
-
-    .col-lg-8.col-md-8.col-sm-12
-      .row
-        #heading-with-line.col-12
-          %h5
-            = t(:more_ideas)
-        .col-12
-          .row
-            = render partial: 'ideas/partials/ideas_list', locals: { ideas: @more_ideas, targeted_col: 6 }
-
-  .row.my-5
-    #heading-with-line.col-12
-      %h5
-        = t(:more_projects)
-    .col-12
-      .row
-        = render partial: 'projects/partials/projects_list', locals: { projects: @more_projects, targeted_col: 4 }
+.row.my-5
+  .col-lg-12.col-md-12.col-sm-12
+    .row
+      #heading-with-line.col-12
+        %h5
+          = t(:ideas)
+      .col-12
+        .row
+          = render partial: 'ideas/partials/ideas_list', locals: { ideas: @more_ideas, targeted_col: 12 }

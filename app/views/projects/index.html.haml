@@ -4,7 +4,8 @@
       = t(:listed_projects)
   .col-12
     .row
-      = render partial: 'projects/partials/projects_list', locals: { projects: @projects, targeted_col: 4 }
+      .col
+        = render partial: 'projects/partials/projects_list', locals: { projects: @projects, length: 200 }
     .row
       .mx-auto
         .apple_pagination

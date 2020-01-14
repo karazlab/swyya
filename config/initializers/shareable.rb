@@ -11,7 +11,7 @@ STATUS = {
   inactive: 2
 }.freeze
 
-NEWEST_PROJECTS_LIMIT = 12
+NEWEST_PROJECTS_LIMIT = 25
 MOST_LIKED_PROJECTS_LIMIT = 6
 
 PROJECTS_PER_PAGE_VISITOR = 12
@@ -33,7 +33,7 @@ SOCIAL = {
   facebook: 'https://www.facebook.com/swyyacom',
   twitter:  '#',
   globe:    '#',
-  'product-hunt': 'https://www.producthunt.com/posts/swyya' 
+  'product-hunt': 'https://www.producthunt.com/posts/swyya'
 }.freeze
 
 DEFAULT_KEYWORDS = ['latest open source', 'best open source projects', 'open source', 'open-source', 'open source projects', 'open source development', 'open source code', 'open source community', 'free source code', 'free open source']

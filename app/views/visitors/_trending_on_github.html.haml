@@ -7,4 +7,5 @@
             = t(:trending_on_github)
         .col-12
           .row
-            = render partial: 'projects/partials/trending', locals: { projects: @trending, targeted_col: 4 }
+            .col
+              = render partial: 'projects/partials/trending', locals: { projects: @trending }

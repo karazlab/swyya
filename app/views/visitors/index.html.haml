@@ -1,5 +1,9 @@
-- if @trending.present?
-  .mb-3
-    = render partial: 'visitors/trending_on_github'
-= render partial: 'visitors/projects_and_ideas_container'
-= render partial: 'visitors/tags_cloud'
+.row
+  .col-8
+    = render partial: 'visitors/projects_and_ideas_container'
+  .col-4
+    - if @trending.present?
+      = render partial: 'visitors/trending_on_github'
+    = render partial: 'visitors/tags_cloud'
+
+
