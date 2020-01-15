@@ -1,13 +1,21 @@
-#heading-with-line
-  %h5
-    = t(:liked_ideas)
-.card
-  .card-body#custom-body
-    %table.table.table-sm.table-borderless.mb-0.pb-0
-      %tbody
-        - @liked_ideas.each do |idea|
-          %tr
-            %td
-              = link_to idea.title, idea_path(idea), class: 'title'
-              .small= icon('fas', 'clock', time_ago(idea.created_at))
-              %hr
+.row
+  .col
+    .card.border-top-0.p-3
+      - if @liked_ideas.present?
+        %table.table.table-hover.table-bordered.table-board
+          %thead
+            %tr.d-flex.bg-primary
+              %th.col-10
+                = t(:idea)
+              %th.col-2.text-center
+                = t(:since)
+          %tbody
+            - @liked_ideas.each do |idea|
+              %tr.d-flex
+                %td.col-10
+                  = link_to idea.title, idea, class: 'title-board'
+                %td.col-2.text-center.time-ago
+                  = time_ago(idea.created_at)
+      - else
+        %p.text-center
+          = t(:no_results)

@@ -68,8 +68,39 @@
     @extend .shadow-sm, .rounded-circle, .my-3
   .icon-link
     color: $BLACK
+    @extend .mr-3
     &:hover
       color: $APPLE !important
       text-decoration: none
   #custom-body
     @extend .mb-2, .pb-0
+
+.nav-tabs .nav-link
+  color: $BLACK
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus
+  color: $BLUE
+  background-color: $GRAY
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link
+  color: $BLUE
+  background-color: $GRAY
+  @extend .shadow-sm
+
+.table-board
+  .time-ago, .icon-link
+    font-size: .75rem
+
+.title-board
+  font-size: .80rem
+  color: $BLUE
+  &:hover
+    text-decoration: none
+    color: $APPLE !important
+
+.table-board tbody tr:hover
+    background-color: $WHITE !important
+
+.hidden-object
+  font-size: 10px !important
+  color: $BLACK

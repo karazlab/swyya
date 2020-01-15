@@ -6,10 +6,10 @@ module Votable
   end
 
   def like(actable_user)
-    liked_by(actable_user)
+    vote_by voter: actable_user
   end
 
   def dislike(actable_user)
-    disliked_by(actable_user)
+    downvote_from actable_user
   end
 end

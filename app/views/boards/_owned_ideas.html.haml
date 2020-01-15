@@ -1,17 +1,30 @@
-#heading-with-line
-  %h5
-    = t(:shared_ideas)
 .row
-  - @owned_ideas.each do |idea|
-    .col-lg-6.col-md-6.col-sm-12
-      .card
-        .card-body#custom-body
-          .row
-            .col-lg-8.col-md-8.col-sm-12
-              %p
-                = link_to idea.title, idea, class: 'title'
-            .col-lg-4.col-md-4.col-sm-12.text-right
-              = link_to edit_idea_path(idea), class: 'small icon-link' do
-                = icon('fas', 'edit', title: t(:edit))
-              = link_to idea_path(idea), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do
-                = icon('fas', 'trash', title: t(:delete))
+  .col
+    .card.border-top-0.p-3
+      - if @owned_ideas.present?
+        %table.table.table-hover.table-bordered.table-board
+          %thead
+            %tr.d-flex.bg-primary
+              %th.col-8
+                = t(:idea)
+              %th.col-2.text-center
+                = t(:since)
+              %th.col-2.text-center
+                = t(:actions)
+          %tbody
+            - @owned_ideas.each do |idea|
+              %tr.d-flex
+                %td.col-8
+                  = link_to idea.title, idea, class: 'title-board'
+                  - if idea.status.eql?(STATUS[:inactive])
+                    = icon('fas', 'eye-slash', text: t(:hidden), title: t(:hidden), class: 'hidden-object')
+                %td.col-2.text-center.time-ago
+                  = time_ago(idea.created_at)
+                %td.col-2.text-center
+                  = link_to edit_idea_path(idea), class: 'small icon-link' do
+                    = icon('fas', 'edit', t(:edit))
+                  = link_to idea_path(idea), method: :delete, class: 'small icon-link', data: { confirm: t(:delete_confirmation) } do
+                    = icon('fas', 'trash', t(:delete))
+      - else
+        %p.text-center
+          = t(:no_results)
