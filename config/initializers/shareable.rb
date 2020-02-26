@@ -30,7 +30,7 @@ TAGS_COLORS = %w[success primary danger warning info secondary light]
 
 SOCIAL = {
   github:   'https://www.github.com/karazlab/swyya',
-  facebook: 'https://www.facebook.com/swyyacom',
+  facebook: 'https://www.facebook.com/sawia.xyz',
   twitter:  '#',
   globe:    '#',
   'product-hunt': 'https://www.producthunt.com/posts/swyya'
