@@ -2,9 +2,9 @@
   %li.nav-item
     = link_to projects_path, class: 'navbar-link' do
       = icon('fas', 'project-diagram', t(:projects))
-  %li.nav-item
-    = link_to ideas_path, class: 'navbar-link' do
-      = icon('fas', 'brain', t(:ideas))
+  -# %li.nav-item
+  -#   = link_to ideas_path, class: 'navbar-link' do
+  -#     = icon('fas', 'brain', t(:ideas))
   - unless user_signed_in?
     %li.nav-item
       = link_to new_user_session_path, class: 'navbar-link' do
@@ -19,9 +19,9 @@
       .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdown"}
         = link_to new_project_path, class: 'dropdown-item navbar-dropdown' do
           = icon('fas', 'project-diagram', t(:new_project))
-        .dropdown-divider
-        = link_to new_idea_path, class: 'dropdown-item navbar-dropdown' do
-          = icon('fas', 'brain', t(:new_idea))
+        -# .dropdown-divider
+        -# = link_to new_idea_path, class: 'dropdown-item navbar-dropdown' do
+        -#   = icon('fas', 'brain', t(:new_idea))
         .dropdown-divider
         = link_to user_board_path, class: 'dropdown-item navbar-dropdown' do
           = icon('fas', 'clipboard-list', t(:board))

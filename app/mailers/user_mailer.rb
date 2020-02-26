@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'labkaraz@gmail.com'
+  default from: 'hello@sawia.xyz'
 
   def welcome(user)
     subject     = "Warm Welcome, It's time to share your work"

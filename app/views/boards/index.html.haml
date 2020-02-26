@@ -2,21 +2,21 @@
   %li.nav-item
     %a#sharedProjectsTab.nav-link.active{"aria-controls" => "sharedProjects", "aria-selected" => "true", "data-toggle" => "tab", :href => "#sharedProjects", :role => "tab"}
       = t(:shared_projects)
-  %li.nav-item
-    %a#sharedIdeasTab.nav-link{"aria-controls" => "sharedIdeas", "aria-selected" => "false", "data-toggle" => "tab", :href => "#sharedIdeas", :role => "tab"}
-      = t(:shared_ideas)
+  -# %li.nav-item
+  -#   %a#sharedIdeasTab.nav-link{"aria-controls" => "sharedIdeas", "aria-selected" => "false", "data-toggle" => "tab", :href => "#sharedIdeas", :role => "tab"}
+  -#     = t(:shared_ideas)
   %li.nav-item
     %a#likedProjectsTab.nav-link{"aria-controls" => "likedProjects", "aria-selected" => "false", "data-toggle" => "tab", :href => "#likedProjects", :role => "tab"}
       = t(:liked_projects)
-  %li.nav-item
-    %a#likedIdeasTab.nav-link{"aria-controls" => "likedIdeas", "aria-selected" => "false", "data-toggle" => "tab", :href => "#likedIdeas", :role => "tab"}
-      = t(:liked_ideas)
+  -# %li.nav-item
+  -#   %a#likedIdeasTab.nav-link{"aria-controls" => "likedIdeas", "aria-selected" => "false", "data-toggle" => "tab", :href => "#likedIdeas", :role => "tab"}
+  -#     = t(:liked_ideas)
 #myTabContent.tab-content
   #sharedProjects.tab-pane.fade.show.active{"aria-labelledby" => "sharedProjectsTab", :role => "tabpanel"}
     = render partial: 'boards/owned_projects'
-  #sharedIdeas.tab-pane.fade{"aria-labelledby" => "sharedIdeasTab", :role => "tabpanel"}
-    = render partial: 'boards/owned_ideas'
+  -# #sharedIdeas.tab-pane.fade{"aria-labelledby" => "sharedIdeasTab", :role => "tabpanel"}
+  -#   = render partial: 'boards/owned_ideas'
   #likedProjects.tab-pane.fade{"aria-labelledby" => "likedProjectsTab", :role => "tabpanel"}
     = render partial: 'boards/liked_projects'
-  #likedIdeas.tab-pane.fade{"aria-labelledby" => "likedIdeasTab", :role => "tabpanel"}
-    = render partial: 'boards/liked_ideas'
+  -# #likedIdeas.tab-pane.fade{"aria-labelledby" => "likedIdeasTab", :role => "tabpanel"}
+  -#   = render partial: 'boards/liked_ideas'

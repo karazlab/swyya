@@ -7,7 +7,7 @@
   * Run rails server and be sure that everything are running smoothly.
 
 # Contribution
-Help us to improve Swyya community
+Help us to improve Sawia community
   * Find an issue listed on [Issues](https://github.com/karazlab/swyya/issues).
     - <strong>If you have recommendation or feature request, Enjoy posting it and we will discuss it.</strong>
   * Comment on the issue to reserve it and avoid conflicts with other contributers.
