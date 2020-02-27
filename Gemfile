@@ -60,3 +60,10 @@ gem 'newrelic_rpm'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :development do
+  gem 'capistrano', '~> 3.10.1'
+	gem 'capistrano-rails', '~> 1.3.1'
+	gem 'capistrano-rvm', '~> 0.1.2'
+	gem 'capistrano3-puma', '~> 3.1', '>= 3.1.1'
+end
