@@ -29,3 +29,5 @@ dump.rdb
 swyya.sh
 /spring-501/*
 lib/tasks/fetcher.rb
+# Ignore master key for decrypting credentials and more.
+/config/master.key
