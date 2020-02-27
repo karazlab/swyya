@@ -60,11 +60,11 @@
 #     # password: "please use keys"
 #   }
 
-server ENV['SERVER_IP'], user: ENV['USER'], roles: %w{app db web}
-set :deploy_to, "/var/www/sawia/#{fetch(:rails_env)}"
+server '64.227.77.65', user: 'sawia', roles: %w{web app db}
+set :deploy_to, "/var/www/sawia/"
 set :branch, :master
 set :stage, :production
 set :ssh_options, {
-    keys: %w(~/.ssh/shift-manager.pem),
+    keys: %w(~/.ssh/id_rsa.pub),
     auth_methods: %w(publickey)
 }
