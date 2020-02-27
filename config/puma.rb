@@ -38,7 +38,7 @@ plugin :tmp_restart
 workers 1
 
 app_dir = File.expand_path("../..", __FILE__)
-shared_dir = "#{app_dir}/shared"
+shared_dir = "/var/www/sawia/current/tmp"
 
 
 # Set up socket location
