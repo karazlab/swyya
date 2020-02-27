@@ -7,6 +7,7 @@ require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
 require 'capistrano/secrets_yml'
+require 'sshkit/sudo'
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
 install_plugin Capistrano::Puma
