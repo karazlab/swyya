@@ -15,6 +15,6 @@ test:
 
 production:
   <<: *default
-  database: swyya_production
-  username: swyya
-  password: <%= ENV['SWYYA_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
