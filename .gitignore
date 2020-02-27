@@ -31,3 +31,4 @@ swyya.sh
 lib/tasks/fetcher.rb
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/secrets.yml

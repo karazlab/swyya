@@ -67,4 +67,5 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano3-puma'
+  gem 'capistrano-secrets-yml', '~> 1.1.0'
 end
