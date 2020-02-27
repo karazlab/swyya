@@ -9,3 +9,4 @@ set :nginx_server_name, "localhost #{fetch(:application)}.local sawia.xyz"
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.6.0@shift-manager'
+set :rails_env, 'production'
