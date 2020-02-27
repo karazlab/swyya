@@ -8,4 +8,4 @@ append :linked_files, "config/database.yml", "config/secrets.yml"
 set :nginx_server_name, "localhost #{fetch(:application)}.local stg.shiftmanager.visunware.com"
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.4.2@shift-manager'
+set :rvm_ruby_version, '2.6.0@shift-manager'
