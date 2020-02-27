@@ -60,7 +60,7 @@
 #     # password: "please use keys"
 #   }
 
-server '34.257.22.153', user: 'sawia', roles: %w{app db web}
+server <%= ENV['SERVER_IP'] %>, user: <%= ENV['USER'] %>, roles: %w{app db web}
 set :deploy_to, "/var/www/sawia/#{fetch(:rails_env)}"
 set :branch, :master
 set :stage, :production
