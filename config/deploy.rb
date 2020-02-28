@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.12.0"
 set :application, "myapp"
-set :repo_url, "git@github.com:username/myapp.git"
+set :repo_url, "git@github.com:karazlab/swyya.git"
 set :branch, "production"
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
