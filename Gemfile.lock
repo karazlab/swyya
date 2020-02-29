@@ -47,6 +47,8 @@ GEM
     acts_as_votable (0.12.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    airbrussh (1.4.0)
+      sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
     autoprefixer-rails (9.7.4)
       execjs
@@ -67,6 +69,23 @@ GEM
     builder (3.2.4)
     byebug (11.1.1)
     cancancan (3.0.2)
+    capistrano (3.12.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.6.0)
+      capistrano (~> 3.1)
+    capistrano-rails (1.4.0)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+    capistrano3-puma (3.1.1)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     climate_control (0.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
@@ -186,6 +205,9 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nenv (0.3.0)
+    net-scp (2.0.0)
+      net-ssh (>= 2.6.5, < 6.0.0)
+    net-ssh (5.2.0)
     netrc (0.11.0)
     newrelic_rpm (6.9.0.363)
     nio4r (2.5.2)
@@ -337,6 +359,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sshkit (1.20.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     temple (0.8.2)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
@@ -378,6 +403,11 @@ DEPENDENCIES
   bootstrap (~> 4.3.1)
   byebug
   cancancan
+  capistrano
+  capistrano-bundler
+  capistrano-rails
+  capistrano-rvm
+  capistrano3-puma
   country_select
   devise
   dotenv-rails

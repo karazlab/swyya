@@ -29,7 +29,15 @@ group :development do
   gem 'awesome_rails_console'
   gem 'guard-rspec', require: false
   gem 'letter_opener'
+
 end
+
+
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 
 # Design
 gem 'bootstrap', '~> 4.3.1'
