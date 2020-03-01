@@ -13,7 +13,8 @@ A community for sharing curated list of open source projects to contribute, Join
   * Postgresql
   * Jquery
   * Rspec
-  * Heroku
+  * Nginx
+  * Capistrano
 
 # Contribution
 As a believers in open-source projects, We are welcoming contributers who aim to build the community and make it stronger.
